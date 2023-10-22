@@ -1,0 +1,6 @@
+﻿Build started...
+1>------ Build started: Project: Ticket Price Calculator, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>Ticket Price Calculator -> C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Debug\net6.0\Ticket Price Calculator.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build started at 2:02 PM and took 00.460 seconds ==========

@@ -1,0 +1,15 @@
+C:\Users\Nigar\source\repos\Student`s grade calculator\bin\Debug\net6.0\Student`s grade calculator.exe
+C:\Users\Nigar\source\repos\Student`s grade calculator\bin\Debug\net6.0\Student`s grade calculator.deps.json
+C:\Users\Nigar\source\repos\Student`s grade calculator\bin\Debug\net6.0\Student`s grade calculator.runtimeconfig.json
+C:\Users\Nigar\source\repos\Student`s grade calculator\bin\Debug\net6.0\Student`s grade calculator.dll
+C:\Users\Nigar\source\repos\Student`s grade calculator\bin\Debug\net6.0\Student`s grade calculator.pdb
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.csproj.AssemblyReference.cache
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.AssemblyInfoInputs.cache
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.AssemblyInfo.cs
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.csproj.CoreCompileInputs.cache
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.dll
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\refint\Student`s grade calculator.dll
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.pdb
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\Student`s grade calculator.genruntimeconfig.cache
+C:\Users\Nigar\source\repos\Student`s grade calculator\obj\Debug\net6.0\ref\Student`s grade calculator.dll

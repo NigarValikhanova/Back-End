@@ -1,0 +1,15 @@
+C:\Users\Nigar\source\repos\21.08.2023 task\bin\Debug\net6.0\21.08.2023 task.exe
+C:\Users\Nigar\source\repos\21.08.2023 task\bin\Debug\net6.0\21.08.2023 task.deps.json
+C:\Users\Nigar\source\repos\21.08.2023 task\bin\Debug\net6.0\21.08.2023 task.runtimeconfig.json
+C:\Users\Nigar\source\repos\21.08.2023 task\bin\Debug\net6.0\21.08.2023 task.dll
+C:\Users\Nigar\source\repos\21.08.2023 task\bin\Debug\net6.0\21.08.2023 task.pdb
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.csproj.AssemblyReference.cache
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.AssemblyInfoInputs.cache
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.AssemblyInfo.cs
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.csproj.CoreCompileInputs.cache
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.dll
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\refint\21.08.2023 task.dll
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.pdb
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\21.08.2023 task.genruntimeconfig.cache
+C:\Users\Nigar\source\repos\21.08.2023 task\obj\Debug\net6.0\ref\21.08.2023 task.dll

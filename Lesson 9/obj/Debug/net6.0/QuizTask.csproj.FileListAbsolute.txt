@@ -1,0 +1,15 @@
+C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.exe
+C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.deps.json
+C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.runtimeconfig.json
+C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.dll
+C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.pdb
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.csproj.AssemblyReference.cache
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.AssemblyInfoInputs.cache
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.AssemblyInfo.cs
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.csproj.CoreCompileInputs.cache
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.dll
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\refint\QuizTask.dll
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.pdb
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\QuizTask.genruntimeconfig.cache
+C:\Users\Nigar\source\repos\QuizTask\obj\Debug\net6.0\ref\QuizTask.dll

@@ -1,0 +1,6 @@
+﻿Build started...
+1>------ Build started: Project: QuizTask, Configuration: Debug Any CPU ------
+1>Skipping analyzers to speed up the build. You can execute 'Build' or 'Rebuild' command to run analyzers.
+1>QuizTask -> C:\Users\Nigar\source\repos\QuizTask\bin\Debug\net6.0\QuizTask.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Build started at 6:28 AM and took 00.572 seconds ==========

@@ -1,0 +1,15 @@
+C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Release\net6.0\Ticket Price Calculator.exe
+C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Release\net6.0\Ticket Price Calculator.deps.json
+C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Release\net6.0\Ticket Price Calculator.runtimeconfig.json
+C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Release\net6.0\Ticket Price Calculator.dll
+C:\Users\Nigar\source\repos\Ticket Price Calculator\bin\Release\net6.0\Ticket Price Calculator.pdb
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.csproj.AssemblyReference.cache
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.AssemblyInfoInputs.cache
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.AssemblyInfo.cs
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.dll
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\refint\Ticket Price Calculator.dll
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.pdb
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\Ticket Price Calculator.genruntimeconfig.cache
+C:\Users\Nigar\source\repos\Ticket Price Calculator\obj\Release\net6.0\ref\Ticket Price Calculator.dll

@@ -1,0 +1,12 @@
+C:\Users\Nigar\source\repos\login and register\bin\Debug\Login and Register.exe.config
+C:\Users\Nigar\source\repos\login and register\bin\Debug\Login and Register.exe
+C:\Users\Nigar\source\repos\login and register\bin\Debug\Login and Register.pdb
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.csproj.AssemblyReference.cache
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login_and_Register.frmRegister.resources
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login_and_Register.frmLogin.resources
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login_and_Register.Properties.Resources.resources
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.csproj.GenerateResource.cache
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.csproj.CoreCompileInputs.cache
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.exe
+C:\Users\Nigar\source\repos\login and register\obj\Debug\Login and Register.pdb

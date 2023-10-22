@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "04.09.2023 Task (31.08.2023 again)/1.0.0": {
+        "runtime": {
+          "04.09.2023 Task (31.08.2023 again).dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "04.09.2023 Task (31.08.2023 again)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
