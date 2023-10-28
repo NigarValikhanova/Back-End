@@ -818,3 +818,80 @@ For asynchronous programming, C# provides the async and await keywords, which si
 ![21 03](https://github.com/NigarValikhanova/IT-Brains-Academy/assets/140783772/c2c6b68b-23b7-4e48-95c0-366c50cec416)
 
 It's important to note that working with threads directly can be complex and error-prone. Careful consideration should be given to thread safety, resource management, and avoiding deadlocks when designing multi-threaded applications. Additionally, modern C# features like Task Parallel Library (TPL) and async/await provide higher-level abstractions that simplify many multi-threading scenarios.
+
+<h3> SQL </h3>
+
+SQL, or Structured Query Language, is a domain-specific programming language used for managing and manipulating relational databases. SQL provides a standardized way to interact with databases, and it's essential for storing, retrieving, updating, and managing data. Here's some key information about SQL:
+
+1. **Relational Databases:** SQL is most commonly associated with relational database management systems (RDBMS), which are used to organize and store data in a structured way. Examples of popular RDBMS software include MySQL, PostgreSQL, Microsoft SQL Server, Oracle Database, and SQLite.
+
+2. **Data Manipulation:** SQL is used to perform various operations on data within a database, including:
+   - **Querying:** Retrieving data from one or more database tables using SELECT statements.
+   - **Inserting:** Adding new records to a table with the INSERT statement.
+   - **Updating:** Modifying existing records in a table with the UPDATE statement.
+   - **Deleting:** Removing records from a table using the DELETE statement.
+
+3. **Data Definition:** SQL is also used to define and manage the structure of a database. This includes creating, altering, and dropping database objects such as tables, indexes, views, and constraints using statements like CREATE, ALTER, and DROP.
+
+4. **Data Retrieval:** SQL provides powerful tools for retrieving and filtering data from one or more tables. The SELECT statement, for example, allows you to specify which columns to retrieve, filter data based on conditions (WHERE clause), and sort the results.
+
+5. **Data Integrity:** SQL allows you to define constraints to maintain data integrity, such as unique constraints, primary keys, foreign keys, and check constraints. These constraints help ensure that data in the database remains accurate and consistent.
+
+6. **Data Relationships:** SQL supports the creation of relationships between tables through foreign keys. This enables the establishment of connections between related pieces of data, allowing for more complex data models.
+
+7. **Transactions:** SQL provides support for database transactions, which are sequences of SQL statements that are executed as a single unit. This ensures data consistency by either committing or rolling back the entire transaction.
+
+8. **Stored Procedures and Functions:** SQL allows you to create reusable, server-side procedures and functions that can be invoked within SQL queries. These are often used for data validation, complex data manipulation, and business logic.
+
+9. **Aggregate Functions:** SQL provides various aggregate functions like SUM, AVG, COUNT, MAX, and MIN for performing calculations on data sets, which is useful for generating summaries and reports.
+
+10. **Security:** SQL databases have built-in security features to control who can access, modify, and manage data. User roles and access permissions are used to restrict and manage database access.
+
+11. **Normalization:** SQL encourages the practice of database normalization, which is the process of organizing data in a way that minimizes data redundancy and ensures data consistency.
+
+12. **Standardized Language:** SQL is a standardized language with an ANSI (American National Standards Institute) standard. While there are some variations and extensions in different database systems, the core SQL syntax and concepts are consistent across implementations.
+
+SQL is a fundamental tool for working with data in a structured and organized manner, and it is a crucial skill for developers, database administrators, data analysts, and anyone involved in managing and extracting insights from data stored in relational databases.
+
+
+<h4> CRUD </h4>
+
+CRUD is an acronym that stands for Create, Read, Update, and Delete. It represents the four basic operations or functions that can be performed on data in most database systems. These operations are fundamental in the context of database management and are often associated with SQL and database applications. Here's a brief overview of each CRUD operation:
+
+1. **Create (C):**
+   - **Function:** The "Create" operation is used to add new records or data entries to a database.
+   - **SQL Statement:** To perform the "Create" operation, you typically use the SQL `INSERT` statement. This statement allows you to add a new row of data to a table.
+
+   Example:
+   
+   INSERT INTO users (first_name, last_name, email) VALUES ('John', 'Doe', 'johndoe@example.com');
+   
+
+2. **Read (R):**
+   - **Function:** The "Read" operation is used to retrieve data from a database, often for viewing, analysis, or reporting.
+   - **SQL Statement:** To perform the "Read" operation, you use the SQL `SELECT` statement. This statement allows you to query and retrieve data from one or more tables.
+
+   Example:
+   
+   SELECT * FROM users WHERE last_name = 'Doe';
+ 
+3. **Update (U):**
+   - **Function:** The "Update" operation is used to modify or change existing data in a database.
+   - **SQL Statement:** To perform the "Update" operation, you use the SQL `UPDATE` statement. This statement allows you to change the values of existing records in a table.
+
+   Example:
+
+   UPDATE users SET email = 'newemail@example.com' WHERE last_name = 'Doe';
+
+
+4. **Delete (D):**
+   - **Function:** The "Delete" operation is used to remove data from a database.
+   - **SQL Statement:** To perform the "Delete" operation, you use the SQL `DELETE` statement. This statement allows you to remove specific records or data from a table.
+
+   Example:
+
+   DELETE FROM users WHERE last_name = 'Doe';
+  
+
+CRUD operations are at the core of database interactions, and they are essential for building and maintaining applications that work with data. In most software applications, you'll find these operations used extensively to manage and manipulate data in a database. They provide the basic framework for creating, retrieving, updating, and deleting data, which are foundational tasks in many information systems and software applications.
+
