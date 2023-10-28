@@ -1,0 +1,76 @@
+--Database Yaradin Adi Ne Olursa Olsun
+
+
+--Brands Adinda Table Yaradin  Id ve Name Columlari Olsun.
+--Insert edin Brands-a mes: Hp,Apple,Xiaomi,Asus
+
+
+--Notebooks Adinda Table Yaradin Id,Name, Price Columlari Olsun.
+--Insert edin
+
+
+--Phones Adinda Table Yaradin Id, Name, Price Columlari Olsun.
+--Insert edin
+
+
+
+--1) Notebook ve Brand Arasinda Mentiqe Uygun Relation Qurun.
+--sonradan table-a nese elave edende alter edilir(alter sorgusu yazilacaq)
+
+
+--2) Phones ve Brand Arasinda Mentiqe Uygun Relation Qurun.
+--sonradan table-a nese elave edende alter edilir(alter sorgusu yazilacaq)
+
+
+--3) Notebooks Adini, Brandin Adini BrandName kimi ve Qiymetini Cixardan Query(join sorgusu).
+
+
+--4) Phones Adini, Brandin Adini BrandName kimi ve Qiymetini Cixardan Query(join sorgusu).
+
+
+--5) Brand Adinin Terkibinde s Olan Butun Notebooklari Cixardan Query.
+ --Where Exists isledeceksiz arasdirin
+--Select * From Notebooks Where Exists(ve burda da like sorgusu olacaq)
+
+--6) Qiymeti 2000 ve 5000 arasi ve ya 5000 den yuksek Notebooklari Cixardan Query.
+
+
+--7) Qiymeti 1000 ve 1500 arasi ve ya 1500 den yuksek Phonelari Cixardan Query.
+--//Between islededeceksiz
+
+--8) Her Branda Aid Nece dene Notebook Varsa Brandin Adini Ve Yaninda Sayini Cixardan Query.
+
+--9) Her Branda Aid Nece dene Phone Varsa Brandin Adini Ve Yaninda Sayini Cixardan Query.
+
+
+--10) Hem Phone Hem de Notebookda Ortaq Olan Name ve BrandId Datalarni Bir Cedvelde Cixardan Query.
+--Union arasdirin ))) yaza bilsez ela
+
+
+--11) Phone ve Notebook da Id, Name, Price, ve BrandId Olan Butun Datalari Cixardan Query.
+--Union arasdirin ))) yaza bilsez ela
+
+
+
+--12) Phone ve Notebook da Id, Name, Price, ve Brandin Adini BrandName kimi Olan Butun Datalari Cixardan Query.
+
+
+--13) Phone ve Notebook da Id, Name, Price, ve Brandin Adini BrandName kimi Olan Butun Datalarin Icinden 
+--Price 1000-den Boyuk Olan Datalari Cixardan Query.
+
+
+--14) Phones Tabelenden Data Cixardacaqsiniz Amma Nece Olacaq Brandin Adi (BrandName kimi), 
+--Hemin Brandda Olan Telefonlarin Pricenin Cemi (TotalPrice Kimi) ve 
+--Hemin Branda Nece dene Telefon Varsa Sayini (ProductCount Kimi) Olan Datalari Cixardan Query.Misal
+--BrandName:        TotalPrice:        ProductCount:
+--Apple					6750                3
+--Samsung				3500                4
+--Redmi                 800					1
+
+
+--15) Notebooks Tabelenden Data Cixardacaqsiniz Amma Nece Olacaq Brandin Adi (BrandName kimi), 
+--Hemin Brandda Olan Telefonlarin Pricenin Cemi (TotalPrice Kimi) , 
+--Hemin Branda Nece dene Telefon Varsa Sayini (ProductCount Kimi) Olacaq ve Sayi 3-ve 3-den Cox Olan Datalari Cixardan Query.Misal
+--BrandName:        TotalPrice:        ProductCount:
+--Apple					6750                3
+--Samsung				3500                4
