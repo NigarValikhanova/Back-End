@@ -1,0 +1,10 @@
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\bin\Debug\Register Task 05.11.2023.exe.config
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\bin\Debug\Register Task 05.11.2023.exe
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\bin\Debug\Register Task 05.11.2023.pdb
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register Task 05.11.2023.csproj.AssemblyReference.cache
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register_Task_05._11._2023.Form1.resources
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register_Task_05._11._2023.Properties.Resources.resources
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register Task 05.11.2023.csproj.GenerateResource.cache
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register Task 05.11.2023.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register Task 05.11.2023.exe
+C:\Users\asus\source\repos\Register Task 05.11.2023\Register Task 05.11.2023\obj\Debug\Register Task 05.11.2023.pdb
