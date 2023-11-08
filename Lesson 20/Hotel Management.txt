@@ -1,0 +1,50 @@
+RoomTypes:
+room_type_id (Primary Key)
+type_name
+description
+price
+
+Rooms:
+room_id (Primary Key)
+room_type_id (Foreign Key to RoomTypes)
+is_booked
+floor_number
+additional_info
+
+Customers:
+customer_id (Primary Key)
+name
+email
+phone
+address
+nationality
+
+Reservations:
+reservation_id (Primary Key)
+customer_id (Foreign Key to Customers)
+room_id (Foreign Key to Rooms)
+check_in_date
+check_out_date
+total_cost
+
+Payments:
+payment_id (Primary Key)
+reservation_id (Foreign Key to Reservations)
+amount
+payment_date
+payment_method
+
+Spendings:
+spending_id (Primary Key)
+reservation_id (Foreign Key to Reservations)
+description
+amount
+spending_date
+
+Relationships:
+One RoomType can have multiple Rooms (one-to-many relationship).
+Each Room is associated with only one RoomType.
+Each Customer can have multiple Reservations (one-to-many relationship).
+Each Reservation is made by one Customer and includes one Room.
+Each Reservation can have multiple Payments and Spendings (one-to-many relationships).
+Each Payment and Spending is related to a single Reservation.
