@@ -1,0 +1,337 @@
+--create database HotelManagement
+--use HotelManagement
+
+--create table RoomTypes(
+--room_type_ID int primary key identity(100,1),
+--room_type_name nvarchar(50) not null,
+--[description] nvarchar(255) not null,
+--price int not null
+--)
+
+--create table Rooms(
+--room_ID int primary key identity,
+--room_type_ID int not null foreign key references RoomTypes(room_type_ID),
+--isbooked nvarchar(50) default 'available',
+--floor_number int not null,
+--additional_info nvarchar(255)
+--)
+
+--create table Customers (
+--customer_ID int primary key identity,
+--[name] nvarchar(255) not null,
+--phone nvarchar(255),
+--email nvarchar(255),
+--[address] nvarchar(255) default 'Baku',
+--nationality nvarchar(155) default 'Azerbaijani'
+--)
+
+--create table Reservations(
+--reservation_ID int primary key identity,
+--customer_ID int not null foreign key references Customers(customer_ID),
+--room_ID int not null foreign key references Rooms(room_ID),
+--check_in_date nvarchar(50),
+--check_out_date nvarchar(50),
+--total_cost int
+--)
+
+--create table Payments(
+--payment_ID int primary key identity,
+--reservation_ID int foreign key references Reservations(reservation_ID),
+--amount int,
+--payment_date nvarchar(50),
+--payment_method nvarchar(50) check(payment_method in('cash', 'card', 'transfer'))
+--)
+
+--create table Spendings(
+--spending_ID int primary key identity,
+--reservation_ID int not null foreign key references Reservations(reservation_ID),
+--[Description] nvarchar(255),
+--amount int,
+--spending_date nvarchar(50)
+--)
+
+--create table Users(
+--ID int primary key identity,
+--UName nvarchar(255),
+--UPhone nvarchar(255),
+--UGender nvarchar(6) not null check(UGender in('male', 'female')),
+--UPassword nvarchar(50)
+--)
+
+
+--insert into RoomTypes(room_type_name, price, [description])
+--Values
+--('Queen Room', 1000, '2 seperated rooms and 2 size double beds + breakfast and all included'),
+--('King Room', 1500, '2 seperated rooms and 2 king size beds + breakfast and all included'),
+--('Twin Room', 500, '2 standard size beds + breakfast'),
+--('Double Room', 400, '1 double size bed + breakfast'),
+--('Quad Room', 800, '4 standard size beds + breakfast'),
+--('Studio Room', 700, '2 double size beds + breakfast'),
+--('Single Room', 200, '1 standard size bed'),
+--('Triple Room', 600, '3 standard size beds + breakfast'),
+--('Mini Suit Room', 1500, '1 king size bed + breakfast and all included'),
+--('Suit Room', 2500, '2 seperated suit rooms and 2 king size bed + breakfast and all included'),
+--('Deluxe Room', 2000, '2 king size beds + breakfast and all included')
+
+
+--insert into Rooms(room_type_ID, floor_number)
+--values
+--(100, 10),
+--(100, 10),
+--(100, 9),
+--(100, 9),
+--(101, 10),
+--(101, 10),
+--(101, 9),
+--(101, 9),
+--(102, 7),
+--(102, 7),
+--(102, 6),
+--(102, 6),
+--(102, 5),
+--(102, 5),
+--(102, 5),
+--(102, 4),
+--(102, 4),
+--(102, 4),
+--(103, 8),
+--(103, 8),
+--(103, 8),
+--(103, 7),
+--(103, 7),
+--(103, 7),
+--(103, 6),
+--(103, 6),
+--(103, 6),
+--(103, 5),
+--(103, 5),
+--(103, 5),
+--(103, 4),
+--(103, 4),
+--(103, 4),
+--(103, 3),
+--(103, 3),
+--(103, 2),
+--(103, 2),
+--(104, 8),
+--(104, 7),
+--(104, 6),
+--(104, 5),
+--(104, 4),
+--(104, 3),
+--(104, 2),
+--(105, 1),
+--(105, 1),
+--(105, 1),
+--(106, 5),
+--(106, 5),
+--(106, 5),
+--(106, 4),
+--(106, 4),
+--(106, 4),
+--(106, 3),
+--(106, 3),
+--(106, 2),
+--(106, 2),
+--(107, 8),
+--(107, 7),
+--(107, 6),
+--(107, 5),
+--(107, 4),
+--(107, 3),
+--(107, 2),
+--(108, 10),
+--(108, 10),
+--(108, 9),
+--(108, 9),
+--(109, 10),
+--(109, 10),
+--(109, 9),
+--(109, 9),
+--(110, 10),
+--(110, 10),
+--(110, 9),
+--(110, 9)
+
+--select *from RoomTypes
+
+--select *from Rooms 
+--order by floor_number (artan sira ile )
+
+--create view [Room_Types_Rooms]
+--as
+--select r.room_ID, rt.room_type_name, rt.description, rt.price, r.isbooked, r.floor_number
+--from Rooms r
+--Join RoomTypes rt on rt.room_type_ID = r.room_type_ID
+
+
+--select *from Room_Types_Rooms order by floor_number
+
+
+--insert into Customers([name], phone)
+--values
+--('Mikayil Jafarov', '(+994)557418522'),
+--('Albina Sharapova', '(+994)506325896'),
+--('Nicat Abdulov', '(+994)105641232'),
+--('Hamid Badalov', '(+994)512353536'),
+--('Sabrina Nikalayevic', '(+994)994151245'),
+--('Narmina Jalalova', '(+994)777548596')
+
+--select *from Customers
+--select *from Reservations
+--select *from Rooms
+
+--insert into Reservations(customer_ID, room_ID, check_in_date, check_out_date)
+--values
+--(1, 27, '2023.15.07', '2023.18.07'),
+--(2, 66, '21.03.2023', '22.03.2023'),
+--(3, 35, '31.01.2023', '02.02.2023'),
+--(4, 43, '08.04.2023', '12.04.2023'),
+--(5, 22, '10.05.2023', '15.05.2023'),
+--(6, 4, '31.07.2023', '01.08.2023')
+
+--select *from Customers
+--select *from Reservations
+--select *from RoomTypes
+--select *from Rooms
+
+--insert into Payments(reservation_ID, payment_method)
+--values
+--(1, 'cash'),
+--(2, 'cash'),
+--(3, 'card'),
+--(4, 'transfer'),
+--(5, 'transfer'),
+--(6, 'card')
+
+--insert into Spendings(reservation_ID, amount)
+--values
+--(1, 400),
+--(2, 600),
+--(3, 200),
+--(4, 800),
+--(5, 500),
+--(6, 300)
+
+
+
+--update Reservations 
+--set total_cost = 1000
+--where reservation_ID =6
+
+--update Reservations 
+--set total_cost = 2000
+--where reservation_ID =5
+
+--update Reservations 
+--set total_cost = 3200
+--where reservation_ID =4
+
+--update Reservations 
+--set total_cost = 800
+--where reservation_ID =3
+
+--update Reservations 
+--set total_cost = 1200
+--where reservation_ID =1
+
+--update Reservations 
+--set total_cost = 1500
+--where reservation_ID =2
+
+
+--update Payments
+--set amount = 1600
+--where reservation_ID=1
+
+--update Payments
+--set amount = 2100
+--where reservation_ID=2
+
+--update Payments
+--set amount = 1000
+--where reservation_ID=3
+
+--update Payments
+--set amount = 4000
+--where reservation_ID=4
+
+--update Payments
+--set amount = 2500
+--where reservation_ID=5
+
+--update Payments
+--set amount = 1300
+--where reservation_ID=6
+
+----TASK 1 CREATE A VIEW
+
+--create view [AllReservationDetails]
+--AS
+--select c.name 'Customer Name', r.check_in_date, r.check_out_date, rm.room_ID 'Room Number', rt.room_type_name 'Room Type', 
+--rm.floor_number, rt.price as 'One Night Price', r.total_cost 'Total Price'
+--from Reservations r
+--join Rooms rm on r.room_ID = rm.room_ID
+--join RoomTypes rt on rm.room_type_ID = rt.room_type_ID
+--join Customers c on r.customer_ID=c.customer_ID
+
+ --Select * from AllReservationDetails
+
+
+ ---- TASK 2 CREATE PROCEDURE
+
+ --create procedure usp_GetRoomDetails @roomID int
+ --AS
+ --select r.room_ID 'Room Number', rt.room_type_name 'Room Type', rt.price 'Room Price'
+ --from RoomTypes rt
+ --join Rooms r on r.room_type_ID = rt.room_type_ID
+ --where r.room_ID = @roomID
+
+--exec usp_GetRoomDetails 6
+
+
+----TASK 3 CREATE FUNCTION
+
+--create function dbo.CalculateTotalAmount (@id_condition int)
+--returns int
+--as
+--begin
+--    declare @total_sum int
+    
+--    select @total_sum = COALESCE(SUM(amount),0) 
+--    from (
+--        select amount from Spendings where reservation_ID = @id_condition
+--        union ALL
+--        select total_cost from Reservations where reservation_ID = @id_condition
+--    ) as combined_data
+
+--    return @total_sum
+--end
+
+
+--select dbo.CalculateTotalAmount(6)
+
+
+----TASK 4 CREATE TRIGGER
+
+--CREATE TRIGGER UpdateRoomStatusOnReservation
+--ON Reservations
+--AFTER INSERT
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--	Declare @custID int, @roomID int
+--	Select @custID=customer_ID, @roomID=room_ID from inserted
+
+--    UPDATE Rooms 
+--	SET isbooked = 'Booked'
+--    where room_ID = @roomID
+--END;
+
+--select *from Customers
+--select *from Reservations
+--select *from Rooms
+
+--insert into Reservations (customer_ID, room_ID)
+--values 
+--(5, 12)
