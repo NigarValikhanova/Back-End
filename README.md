@@ -883,6 +883,120 @@ Improper synchronization or resource contention among threads can lead to deadlo
 
 Threading in C# allows developers to create efficient, responsive, and concurrent applications. However, working with threads directly requires a good understanding of synchronization, thread safety, and potential issues like deadlocks and race conditions. It's recommended to leverage higher-level abstractions provided by the Task Parallel Library (TPL) and async/await for most multi-threading scenarios.
 
+<h3> Reflection in C# </h3>
+
+In C#, reflection is a feature that allows you to inspect and interact with the metadata of types, assemblies, and objects at runtime. Metadata includes information about types, methods, properties, and other elements of a program. Reflection provides the ability to examine and manipulate this metadata dynamically during the execution of a program.
+
+Here are some key concepts related to reflection in C#:
+
+1. **Assembly:** An assembly is the smallest unit of deployment in .NET. Reflection allows you to examine the metadata of assemblies, load assemblies dynamically, and create instances of types defined in those assemblies.
+
+2. **Type:** The Type class in the System namespace represents a type (class, interface, enum, etc.) in C#. Reflection allows you to get information about a type, such as its methods, properties, events, and attributes.
+
+3. **Activator:** The Activator class provides methods for creating instances of types dynamically. This is useful when you want to instantiate a type without knowing it at compile time.
+
+4. **MethodInfo, PropertyInfo, EventInfo:** These classes in the System.Reflection namespace represent methods, properties, and events, respectively. Reflection allows you to inspect and invoke these members dynamically.
+
+Here's a simple example of using reflection in C# to get information about a type and create an instance dynamically:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Get the type of a class
+        Type myType = typeof(MyClass);
+
+        // Get information about methods in the type
+        MethodInfo[] methods = myType.GetMethods();
+        Console.WriteLine("Methods in MyClass:");
+        foreach (var method in methods)
+        {
+            Console.WriteLine(method.Name);
+        }
+
+        // Create an instance of the class dynamically
+        object instance = Activator.CreateInstance(myType);
+
+        // Invoke a method dynamically
+        MethodInfo myMethod = myType.GetMethod("MyMethod");
+        myMethod.Invoke(instance, null);
+    }
+}
+
+class MyClass
+{
+    public void MyMethod()
+    {
+        Console.WriteLine("Hello from MyMethod!");
+    }
+}
+```
+
+Keep in mind that while reflection is a powerful tool, it should be used judiciously due to its potential performance overhead and the lack of compile-time type checking.
+
+<h4>GetType and Typeof Operator in Reflection </h4>
+
+Let's clarify the differences between the `GetType` method and the `typeof` operator in C#:
+
+1. **`typeof` Operator:**
+   - **Usage:** The `typeof` operator is used to obtain the `Type` object for a specified type at compile time.
+   - **Syntax:** `typeof(TypeName)`
+   - **Example:**
+     ```csharp
+     Type myType = typeof(MyClass);
+     ```
+
+2. **`GetType` Method:**
+   - **Usage:** The `GetType` method is used to obtain the `Type` object for the current instance at runtime.
+   - **Syntax:** `instance.GetType()`
+   - **Example:**
+     ```csharp
+     MyClass myInstance = new MyClass();
+     Type instanceType = myInstance.GetType();
+     ```
+
+Now, let's break down the key differences:
+
+- **Compile Time vs. Runtime:**
+  - `typeof` is resolved at compile time. It is used when you know the type at compile time, and you want to get information about that type during compilation.
+  - `GetType` is resolved at runtime. It is used when you have an instance of an object, and you want to get information about its type dynamically during program execution.
+
+- **Usage:**
+  - Use `typeof` when you know the type at compile time and want to work with the type information statically.
+  - Use `GetType` when you have an object, and you want to inspect its type or perform actions based on its runtime type.
+
+- **Examples:**
+  - `typeof` is often used when working with generics, reflection, or when you need to pass type information as a parameter to a method or class.
+  - `GetType` is used when you have an object, and you want to dynamically determine its type at runtime.
+
+Here's a quick example to illustrate the differences:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Using typeof
+        Type myType = typeof(MyClass);
+        Console.WriteLine("Type from typeof: " + myType.Name);
+
+        // Using GetType
+        MyClass myInstance = new MyClass();
+        Type instanceType = myInstance.GetType();
+        Console.WriteLine("Type from GetType: " + instanceType.Name);
+    }
+}
+
+class MyClass { }
+```
+
+In this example, `typeof(MyClass)` is used to get the type at compile time, and `myInstance.GetType()` is used to get the type at runtime.
+
 <h3> SQL </h3>
 
 SQL, or Structured Query Language, is a domain-specific programming language used for managing and manipulating relational databases. SQL provides a standardized way to interact with databases, and it's essential for storing, retrieving, updating, and managing data. Here's some key information about SQL:
@@ -1140,6 +1254,119 @@ FROM Employees;
 
 Functions are valuable tools for encapsulating logic, performing calculations, and reusing code within SQL statements. They are commonly used in database systems to simplify and streamline complex queries, but should be used thoughtfully to ensure they do not negatively impact performance.
 
+<h4> SQL Functions </h4>
+
+In SQL, functions are predefined or user-defined operations that can be used to perform various tasks on data. SQL functions can be broadly categorized into two types: aggregate functions and scalar functions.
+
+### Aggregate Functions:
+
+Aggregate functions operate on a set of values and return a single value, summarizing the data. Commonly used aggregate functions include:
+
+1. **COUNT:**
+   - Returns the number of rows in a set.
+
+   ```sql
+   SELECT COUNT(column_name) FROM table_name WHERE condition;
+   ```
+
+2. **SUM:**
+   - Returns the sum of values in a set.
+
+   ```sql
+   SELECT SUM(column_name) FROM table_name WHERE condition;
+   ```
+
+3. **AVG:**
+   - Returns the average value of a numeric column in a set.
+
+   ```sql
+   SELECT AVG(column_name) FROM table_name WHERE condition;
+   ```
+
+4. **MIN:**
+   - Returns the minimum value in a set.
+
+   ```sql
+   SELECT MIN(column_name) FROM table_name WHERE condition;
+   ```
+
+5. **MAX:**
+   - Returns the maximum value in a set.
+
+   ```sql
+   SELECT MAX(column_name) FROM table_name WHERE condition;
+   ```
+
+### Scalar Functions:
+
+Scalar functions operate on a single value and return a single value. They can be applied to each row separately. Common scalar functions include:
+
+1. **UPPER and LOWER:**
+   - Convert a string to uppercase or lowercase.
+
+   ```sql
+   SELECT UPPER(column_name) FROM table_name;
+   SELECT LOWER(column_name) FROM table_name;
+   ```
+
+2. **CONCAT (or CONCATENATE):**
+   - Concatenates two or more strings.
+
+   ```sql
+   SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM table_name;
+   ```
+
+3. **SUBSTRING:**
+   - Extracts a substring from a string.
+
+   ```sql
+   SELECT SUBSTRING(column_name, start_position, length) FROM table_name;
+   ```
+
+4. **ROUND:**
+   - Rounds a numeric value to a specified number of decimal places.
+
+   ```sql
+   SELECT ROUND(column_name, decimals) FROM table_name;
+   ```
+
+5. **COALESCE:**
+   - Returns the first non-null expression in a list.
+
+   ```sql
+   SELECT COALESCE(column_name, 'default_value') FROM table_name;
+   ```
+
+6. **DATE Functions:**
+   - SQL provides various functions for working with date and time, such as `GETDATE()`, `DATEADD()`, `DATEDIFF()`, etc.
+
+   ```sql
+   SELECT GETDATE() AS current_date_time;
+   ```
+
+7. **Mathematical Functions:**
+   - SQL supports standard mathematical functions like `SQRT()`, `POWER()`, `ABS()`, etc.
+
+   ```sql
+   SELECT SQRT(column_name) FROM table_name;
+   ```
+
+### User-Defined Functions (UDFs):
+
+In addition to the built-in functions, SQL allows the creation of user-defined functions. These functions are defined by the user to perform specific tasks, and they can be reused within SQL statements.
+
+```sql
+CREATE FUNCTION dbo.MyFunction(@param1 INT, @param2 INT)
+RETURNS INT
+AS
+BEGIN
+    -- Function logic here
+    RETURN @param1 + @param2;
+END;
+```
+
+Functions are a powerful tool in SQL for performing operations on data, transforming values, and creating more readable and maintainable queries. The specific functions available may vary depending on the database management system (DBMS) you are using. Always refer to the documentation of your specific database for accurate and detailed information.
+
 <h4> Trigger </h4>
 
 In the context of databases, a trigger is a database object that is associated with a table and is activated (or "triggered") automatically when certain events (e.g., INSERT, UPDATE, DELETE) occur on that table. Triggers are written in SQL and are used to enforce business rules, maintain data integrity, or take specific actions in response to data modification events.
@@ -1188,3 +1415,287 @@ This trigger, named `trgAfterUpdate`, is set on `YourTable` to execute after an 
 4. **Replication and Synchronization:** Supporting replication or synchronization between databases.
 
 Triggers can be powerful tools, but they should be used judiciously to avoid complexity and potential performance issues. It's essential to understand the impact of triggers on database operations.
+
+<h4> SQL Wildcards </h4>
+
+In SQL, wildcards are special characters used in conjunction with the `LIKE` operator to perform pattern matching in string comparisons. They allow you to search for data that matches a specific pattern rather than an exact value. The commonly used SQL wildcards are:
+
+### 1. `%` (Percentage Sign):
+- The `%` wildcard represents any sequence of characters (including zero characters) in a string.
+
+  **Example:**
+  ```sql
+  SELECT * FROM employees WHERE last_name LIKE 'Sm%';
+  ```
+  This query retrieves all employees whose last names start with "Sm."
+
+### 2. `_` (Underscore):
+- The `_` wildcard represents a single character.
+
+  **Example:**
+  ```sql
+  SELECT * FROM employees WHERE first_name LIKE 'J_n';
+  ```
+  This query retrieves all employees whose first names are three characters long and start with "J" and end with "n," such as "John" or "Jane."
+
+### 3. `[]` (Character Range):
+- The `[]` wildcard allows you to specify a range of characters for a single character position.
+
+  **Example:**
+  ```sql
+  SELECT * FROM products WHERE product_name LIKE '[C-F]%';
+  ```
+  This query retrieves products whose names start with the letters "C," "D," "E," or "F."
+
+### 4. `[^]` (Negation of Character Range):
+- The `[^]` wildcard allows you to exclude a range of characters for a single character position.
+
+  **Example:**
+  ```sql
+  SELECT * FROM customers WHERE customer_name LIKE '[^AEIOU]%';
+  ```
+  This query retrieves customers whose names do not start with a vowel.
+
+### 5. `LIKE` Operator with ESCAPE:
+- The `LIKE` operator also supports the `ESCAPE` clause to search for the actual percentage sign `%` or underscore `_` in a string.
+
+  **Example:**
+  ```sql
+  SELECT * FROM employees WHERE job_title LIKE '%\%%' ESCAPE '\';
+  ```
+  This query retrieves employees whose job titles contain a percentage sign.
+
+### Example Using Multiple Wildcards:
+```sql
+SELECT * FROM products WHERE product_name LIKE 'A%o_';
+```
+This query retrieves products whose names start with "A," followed by any characters, and end with "o" followed by a single character.
+
+These wildcards provide flexibility in searching for patterns within strings in SQL queries. Always be mindful of the specific wildcard behavior and pattern you want to match when using these in your queries.
+
+<h3>ADO.NET</h3>
+
+ADO.NET (Active Data Objects for .NET) is a set of .NET libraries that provides a programming interface to access and manipulate data stored in relational databases, XML, and other data sources. It is part of the broader .NET Framework and is commonly used for building data-centric applications and interacting with databases.
+
+Key components and concepts of ADO.NET include:
+
+1. **Data Providers:**
+   - ADO.NET includes data providers specific to different database systems (e.g., SQL Server, Oracle, MySQL). Each data provider consists of classes that allow communication between the .NET application and the respective database.
+
+2. **Connection and Connection Pooling:**
+   - A `Connection` object is used to establish a connection to a database. ADO.NET supports connection pooling, which helps manage and reuse database connections to improve performance.
+
+3. **Command and DataReader:**
+   - A `Command` object represents a SQL query or a stored procedure that is executed against a database. The `DataReader` class allows forward-only, read-only access to the result set of a query, which is efficient for retrieving large sets of data.
+
+4. **DataAdapter and DataSet:**
+   - The `DataAdapter` acts as a bridge between a `DataSet` and a data source. The `DataSet` is an in-memory representation of data retrieved from a database. It can contain multiple DataTables, DataRelations, and constraints.
+
+5. **DataTable and DataRow:**
+   - A `DataTable` represents an in-memory cache of data retrieved from a database. It consists of a collection of `DataRow` objects, each representing a row of data in the table.
+
+6. **DataViews:**
+   - A `DataView` is a customized view of a DataTable, allowing sorting, filtering, and searching of data.
+
+7. **Transactions:**
+   - ADO.NET supports transactions to ensure the integrity of data by grouping multiple database operations into a single atomic unit.
+
+8. **Command Parameters:**
+   - Parameters can be added to ADO.NET commands to prevent SQL injection and allow dynamic values in queries.
+
+### Basic ADO.NET Workflow:
+
+1. **Establish Connection:**
+   - Create a `Connection` object and open a connection to the database.
+
+2. **Execute Command:**
+   - Create a `Command` object (e.g., `SqlCommand` for SQL Server) with the appropriate SQL query or stored procedure. Execute the command to retrieve, update, or manipulate data.
+
+3. **Handle Results:**
+   - Use a `DataReader` to retrieve data in a forward-only, read-only manner, or use a `DataSet` to cache data in-memory for more complex scenarios.
+
+4. **Close Connection:**
+   - Close the database connection when done to release resources.
+
+ADO.NET provides a flexible and efficient means of interacting with databases in .NET applications and is widely used in web and desktop applications for data access and manipulation.
+
+<h3> Garbage Colletion </h3>
+
+Garbage collection is an automatic memory management process used by programming languages, including Java, C#, and others, to reclaim memory occupied by objects that are no longer in use by the program. The primary goal of garbage collection is to free up memory resources, preventing memory leaks and improving the efficiency of a program.
+
+### Key Concepts of Garbage Collection:
+
+1. **Memory Allocation:**
+   - In many programming languages, memory for objects is allocated dynamically during runtime using operations like `new` or `malloc`. These objects exist in the heap memory.
+
+2. **Object Lifecycle:**
+   - Objects are created, used, and eventually become unreachable or no longer referenced by any part of the program.
+
+3. **Memory Leak:**
+   - If the program does not release memory properly, it can lead to memory leaks, where memory is not deallocated even though it's no longer needed. This can result in increased memory consumption over time.
+
+4. **Garbage Collection Process:**
+   - The garbage collector identifies and collects objects that are no longer reachable by the program. The process involves marking, sweeping, and compacting memory regions.
+
+### How Garbage Collection Works:
+
+1. **Mark and Sweep:**
+   - The garbage collector identifies and marks objects that are reachable from the program's root, typically starting with global variables, local variables, and static fields. Unreachable objects are marked for collection.
+
+2. **Sweep:**
+   - The garbage collector sweeps through the heap, identifying and reclaiming memory occupied by the marked, unreachable objects.
+
+3. **Compaction (optional):**
+   - In some garbage collection systems, a compaction step may follow, where the remaining objects in the heap are rearranged to reduce fragmentation and make better use of memory.
+
+### Advantages of Garbage Collection:
+
+1. **Automatic Memory Management:**
+   - Developers don't need to explicitly free memory; the garbage collector takes care of it.
+
+2. **Reduced Memory Leaks:**
+   - Garbage collection helps prevent memory leaks by reclaiming memory from unused objects.
+
+3. **Improved Developer Productivity:**
+   - Developers can focus more on application logic rather than manual memory management, reducing the likelihood of memory-related bugs.
+
+### Disadvantages and Considerations:
+
+1. **Resource Overhead:**
+   - Garbage collection introduces some runtime overhead in terms of CPU and memory usage.
+
+2. **Non-deterministic Timing:**
+   - The exact time when garbage collection occurs is determined by the runtime system, leading to non-deterministic timing of resource reclamation.
+
+3. **Potential Performance Impact:**
+   - In some scenarios, garbage collection pauses may impact the responsiveness of real-time applications.
+
+4. **Tuning and Optimization:**
+   - Some systems provide options for tuning and optimizing garbage collection parameters to better suit the application's requirements.
+
+Languages like Java, C#, and many managed languages use garbage collection to simplify memory management and enhance the reliability and stability of software systems.
+
+# FRONT-END
+<h1> HTML </h1>
+
+HTML, which stands for HyperText Markup Language, is the standard markup language used to create and design documents on the World Wide Web. It forms the backbone of most web content by providing the structure and elements that define the content on a web page. Here are some key points about HTML:
+
+1. **Markup Language:**
+   - HTML is a markup language that uses a system of tags and attributes to structure content on the web.
+
+2. **Document Structure:**
+   - An HTML document is structured as a tree of elements, each represented by a pair of tags (opening and closing). Common root elements include `<html>`, `<head>`, and `<body>`.
+
+3. **Tags and Elements:**
+   - Tags are the building blocks of HTML. They define and label pieces of content on a webpage.
+   - Example: `<p>` represents a paragraph, `<h1>` represents a top-level heading, `<a>` represents a hyperlink, etc.
+
+4. **Attributes:**
+   - HTML tags can have attributes that provide additional information about the element.
+   - Example: `<a href="https://www.example.com">Visit Example</a>` - Here, `href` is an attribute of the `<a>` (anchor) tag.
+
+5. **Document Head:**
+   - The `<head>` section of an HTML document typically contains metadata about the document, such as the title, character set, linked stylesheets, and scripts.
+
+6. **Document Body:**
+   - The `<body>` section contains the main content of the document, such as text, images, links, and other multimedia.
+
+7. **Hyperlinks:**
+   - Hyperlinks are created using the `<a>` (anchor) tag. They allow users to navigate between different web pages or resources.
+
+8. **Images:**
+   - Images are embedded using the `<img>` tag. The `src` attribute is used to specify the source (URL) of the image.
+
+9. **Lists:**
+   - HTML supports ordered lists (`<ol>`), unordered lists (`<ul>`), and definition lists (`<dl>`) to organize and structure content.
+
+10. **Forms:**
+    - Forms are created using the `<form>` tag and include various input elements like text boxes, checkboxes, radio buttons, and submit buttons.
+
+11. **Semantic Elements:**
+    - HTML5 introduced semantic elements such as `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`, and `<aside>`. These help convey the meaning and structure of content more accurately.
+
+Here's a simple example of a basic HTML document:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is a paragraph of text.</p>
+    <a href="https://www.example.com">Visit Example</a>
+    <img src="image.jpg" alt="An example image">
+</body>
+</html>
+```
+
+This example includes the essential elements of an HTML document, such as `<!DOCTYPE html>`, `<html>`, `<head>`, `<meta>`, `<title>`, `<body>`, `<h1>`, `<p>`, `<a>`, and `<img>`.
+
+
+<h1> CSS </h1>
+
+CSS, which stands for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS defines how elements on a web page are displayed, including their layout, colors, fonts, spacing, and other visual aspects. Here are key points about CSS:
+
+1. **Selectors:**
+   - CSS uses selectors to target HTML elements for styling. Selectors can be based on element names, classes, IDs, attributes, and more.
+   - Example: `h1` targets all `<h1>` elements, `.class` targets elements with a specific class, `#id` targets an element with a specific ID.
+
+2. **Properties and Values:**
+   - CSS rules consist of a selector and a set of properties and values. Properties define the style aspects, and values specify the settings for those properties.
+   - Example: `color: blue;` sets the text color to blue.
+
+3. **Box Model:**
+   - The box model is a fundamental concept in CSS that describes the layout of elements. It consists of content, padding, border, and margin.
+   - Content: Actual content of the element.
+   - Padding: Space between the content and the border.
+   - Border: A line that surrounds the padding.
+   - Margin: Space outside the border, creating a gap between elements.
+
+4. **Layout:**
+   - CSS provides tools for controlling the layout of a webpage. This includes properties like `display`, `position`, `float`, and `flexbox`.
+   - Flexbox and Grid are modern layout models that offer powerful and flexible ways to structure page layouts.
+
+5. **Typography:**
+   - CSS allows control over text properties such as font family, size, weight, style, line height, and text alignment.
+
+6. **Colors and Backgrounds:**
+   - CSS enables the definition of colors for text, backgrounds, borders, and other elements using color names, hexadecimal values, RGB values, or HSL values.
+
+7. **Transitions and Animations:**
+   - CSS supports transitions and animations, allowing for smooth changes in property values over time. This is useful for creating interactive and engaging user interfaces.
+
+8. **Media Queries:**
+   - Media queries allow the adaptation of styles based on the characteristics of the device, such as screen size, resolution, or orientation. This is crucial for creating responsive designs.
+
+9. **Vendor Prefixes:**
+   - Some CSS features may require vendor prefixes to ensure compatibility with different browsers. For example, `-webkit-` for WebKit-based browsers like Chrome and Safari.
+
+10. **CSS Preprocessors:**
+    - Preprocessors like Sass and Less extend the capabilities of CSS by introducing variables, nesting, and functions. These preprocessors are then compiled into standard CSS.
+
+Here's a simple example of a CSS rule:
+
+```css
+/* CSS Stylesheet */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+```
+
+In this example, the CSS sets the font family and background color for the `body`, the text color and alignment for `h1` elements, and the width and margin for elements with the class `container`.
