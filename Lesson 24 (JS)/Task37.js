@@ -8,6 +8,7 @@ var Fname = document.getElementById("Fname");
 var phone = document.getElementById("phone");
 var city = document.getElementById("city");
 var country = document.getElementById("country");
+var radios = document.querySelectorAll("input[name=gender]");
 
 
 
@@ -28,7 +29,7 @@ btnRegister.addEventListener("click", function () {
     CheckNull(phone);
     CheckNull(city);
     CheckNull(country);
-    CheckGender()
+    CheckGender(radios);
 })
 
 function CheckNull(input) {
@@ -137,16 +138,18 @@ function ValidatePassword(input1, input2) {
         input1.nextElementSibling.innerHTML = "Boshdur"
         input2.nextElementSibling.innerHTML = "Boshdur"
     }
-    function CheckGender() {
-      var radio1 = document.getElementById("male");
-      var radio2 = document.getElementById("female");
+}
+function CheckGender() {
+    var isCheck = false;
+    radios.forEach(element => {
+        if (element.checked == true) {
+            isCheck = true;
+            document.querySelector(".text-danger-radio").innerHTML = "";
 
-      if (radio1.checked == true) {
-        alert("Radio 1 is checked");
-      } else if (radio2.checked == true) {
-        alert("Radio 2 is checked");
-      } else {
-        alert("No radio button is checked");
-      }
+        }
+    });
+    if (isCheck == false) {
+        document.querySelector(".text-danger-radio").innerHTML = "Boshdur";
+        document.querySelector(".text-danger-radio").style.color = "red";
     }
 }
