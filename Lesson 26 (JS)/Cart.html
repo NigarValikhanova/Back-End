@@ -4,45 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Cart.css">
-    <script src="Cart.js" async></script>
-    <title>Cart</title>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
-
     <header>
-        <h1>Shopping Cart</h1>
+        <div class="navbar">
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+            <a href="#" class="logo">shopping<span>.</span></a>
+
+            <nav class="navbar">
+                <a href="MainPage.html">home</a>
+                <a href="#about">about</a>
+                <a href="#products">products</a>
+                <a href="#preview">preview</a>
+                <a href="#contact">contact</a>
+            </nav>
+
+            <div class="icons">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="Cart.html" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-user"></a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="product" data-id="1">
-            <img src="product1.jpg" alt="Product 1">
-            <div>
-                <h3>Product 1</h3>
-                <p>$20.00</p>
-                <button onclick="addToCart(1)">Add to Cart</button>
-            </div>
-        </div>
+    <div id="cart-container"></div>
 
-        <div class="product" data-id="2">
-            <img src="product2.jpg" alt="Product 2">
-            <div>
-                <h3>Product 2</h3>
-                <p>$30.00</p>
-                <button onclick="addToCart(2)">Add to Cart</button>
-            </div>
-        </div>
-
-        <!-- Add more products as needed -->
-
-        <div class="cart">
-            <h2>Shopping Cart</h2>
-            <div id="cart-items"></div>
-            <p>Total: $<span id="cart-total">0.00</span></p>
-        </div>
+    <div id="checkout-section">
+        <button onclick="checkout()">Checkout</button>
     </div>
 
+    <script src="cart.js"></script>
 </body>
 
 </html>
