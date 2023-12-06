@@ -1575,6 +1575,37 @@ Garbage collection is an automatic memory management process used by programming
 
 Languages like Java, C#, and many managed languages use garbage collection to simplify memory management and enhance the reliability and stability of software systems.
 
+<h3>ASP.NET</h3>
+
+ASP.NET is a web development framework developed by Microsoft for building dynamic web applications. The term "ASP.NET" is often used to refer to two different technologies:
+
+1. **ASP.NET Web Forms:**
+   - ASP.NET Web Forms is a traditional web application framework that enables the development of web applications using a model similar to event-driven desktop applications.
+   - It uses a page-based approach where the user interface is defined using server-side controls, and events on these controls trigger server-side code execution.
+   - Web Forms applications use a concept called "ViewState" to maintain the state of controls between postbacks.
+
+2. **ASP.NET MVC (Model-View-Controller):**
+   - ASP.NET MVC is a more modern and lightweight web framework that follows the Model-View-Controller architectural pattern.
+   - It separates an application into three main components: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the model).
+   - ASP.NET MVC provides more control over the HTML markup and allows developers to build applications with a cleaner separation of concerns.
+
+Key features and concepts of ASP.NET include:
+
+- **Server-side Code Execution:** ASP.NET allows developers to write server-side code (typically in languages like C# or VB.NET) that is executed on the web server, generating HTML or other content to be sent to the client's browser.
+
+- **ASP.NET Core:** This is the cross-platform, high-performance, and open-source version of ASP.NET. ASP.NET Core supports cross-platform development and is designed to work with modern development practices.
+
+- **Integrated Development Environment (IDE):** Visual Studio is the preferred IDE for developing ASP.NET applications. It provides a rich set of tools for designing, developing, testing, and deploying web applications.
+
+- **Security:** ASP.NET includes built-in security features to help developers build secure applications. It supports authentication, authorization, and other security mechanisms.
+
+- **Data Access:** ASP.NET provides various data access technologies, including ADO.NET for direct database access, Entity Framework for object-relational mapping, and other data-binding mechanisms.
+
+- **ASP.NET Web API:** This is a framework for building RESTful web services, allowing developers to create APIs that can be consumed by various clients, such as web applications, mobile apps, and other services.
+
+ASP.NET has evolved over the years, and ASP.NET Core represents the latest version as of my knowledge cutoff in January 2022. It's worth checking for any updates or changes beyond that date.
+
+
 # FRONT-END
 <h1> HTML </h1>
 
@@ -1699,3 +1730,36 @@ h1 {
 ```
 
 In this example, the CSS sets the font family and background color for the `body`, the text color and alignment for `h1` elements, and the width and margin for elements with the class `container`.
+
+
+<h3> JavaScript </h3>
+JavaScript is a high-level, versatile, and dynamically-typed programming language primarily known for its role in web development. It is designed to be lightweight and can be integrated into HTML pages. JavaScript allows developers to create dynamic, interactive content and manipulate elements on a web page in response to user actions. Here are some key aspects of JavaScript:
+
+1. **Client-Side Scripting:**
+   - JavaScript is primarily used as a client-side scripting language, meaning it runs on the user's web browser rather than on the server. This allows developers to enhance the user interface and create interactive web pages.
+
+2. **Interactivity:**
+   - One of the main purposes of JavaScript is to make web pages interactive. It enables developers to respond to user actions such as clicks, form submissions, and keypresses, and dynamically update the content displayed on the page.
+
+3. **Dynamic Content Manipulation:**
+   - JavaScript can manipulate the Document Object Model (DOM), which represents the structure of an HTML document. This manipulation allows for the addition, removal, or modification of elements on a web page without requiring a full page reload.
+
+4. **Asynchronous Operations:**
+   - JavaScript supports asynchronous programming through mechanisms like callbacks, promises, and the async/await syntax. Asynchronous operations allow the execution of tasks without blocking the main thread, which is crucial for tasks like fetching data from a server.
+
+5. **Event-Driven Programming:**
+   - JavaScript follows an event-driven programming paradigm. Developers can attach event listeners to DOM elements to respond to events triggered by user interactions or other sources.
+
+6. **ECMAScript:**
+   - JavaScript is based on the ECMAScript standard, which defines the core features and syntax of the language. New versions of ECMAScript, such as ES6 (ECMAScript 2015) and subsequent editions, introduce new features and improvements to the language.
+
+7. **Versatility:**
+   - While JavaScript is most commonly associated with web development, it has expanded beyond the browser. With the advent of Node.js, JavaScript can now be used for server-side development, allowing developers to use a single language for both client and server applications.
+
+8. **Libraries and Frameworks:**
+   - Numerous libraries and frameworks built on top of JavaScript simplify common development tasks. Examples include jQuery for DOM manipulation, React.js and Angular for building user interfaces, and Express.js for building server-side applications with Node.js.
+
+9. **Security:**
+   - Security is a crucial consideration in JavaScript development. Developers need to be aware of potential security threats, such as Cross-Site Scripting (XSS), and implement best practices to secure their applications.
+
+In summary, JavaScript is a fundamental language in web development, enabling the creation of dynamic and interactive web applications. Its continual evolution through the ECMAScript standard and the support of a vibrant ecosystem of libraries and frameworks contribute to its widespread use in modern software development.
