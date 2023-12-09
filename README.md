@@ -18,6 +18,41 @@ C# is similar in syntax to other C-based programming languages like C++ and Java
 The .NET framework includes the Common Language Runtime (CLR), which is responsible for managing the execution of code written in various languages, including C#. It also includes a vast standard library called the Base Class Library (BCL), which provides a wide range of functionalities like input/output, data access, networking, and more.
 .NET supports multiple programming languages, and C# is one of the primary languages used with the framework. Other languages include VB.NET (Visual Basic .NET), F# (functional programming language), and more recently, languages like TypeScript and Python through the .NET 5+ ecosystem.
 In summary, C# is a programming language, while .NET is a framework that includes the Common Language Runtime (CLR) and a rich set of libraries. C# is often used in combination with the .NET framework to build powerful and versatile applications on various platforms.
+
+<h3> .Net and .Net core </h3>
+
+.NET and .NET Core are both development platforms created by Microsoft for building various types of applications. Here are the key differences between .NET and .NET Core:
+
+1. **Platform Independence:**
+   - **.NET:** Initially, .NET was primarily designed for Windows-based applications. While it's possible to run .NET applications on non-Windows platforms using technologies like Mono, the native support for cross-platform development was limited.
+   - **.NET Core:** One of the major changes with .NET Core is its focus on cross-platform development. .NET Core was designed from the ground up to be platform-agnostic, supporting Windows, macOS, and Linux.
+
+2. **Open Source:**
+   - **.NET:** Historically, the .NET Framework was not fully open source. Parts of it were open-sourced over time, but it wasn't as open as .NET Core.
+   - **.NET Core:** It was built as an open-source project from the beginning. This openness has encouraged community contributions, increased transparency, and allowed developers to inspect and modify the source code.
+
+3. **Modularity:**
+   - **.NET:** The .NET Framework was a monolithic framework, meaning that you had to install the entire framework, and it came with the operating system.
+   - **.NET Core:** It introduced a more modular and lightweight framework. Applications could include only the libraries and dependencies they needed, reducing the overall footprint.
+
+4. **Deployment Model:**
+   - **.NET:** Applications built on the .NET Framework were typically deployed with the framework included. This made deployment larger and sometimes more complex.
+   - **.NET Core:** With its modularity, .NET Core introduced a new deployment model where applications could be self-contained, including the necessary dependencies, making deployment more straightforward.
+
+5. **Runtime:**
+   - **.NET:** The .NET Framework had its runtime, Common Language Runtime (CLR).
+   - **.NET Core:** It introduced a new, cross-platform runtime called CoreCLR, optimized for performance and designed to work across different operating systems.
+
+6. **Framework Ecosystem:**
+   - **.NET:** Traditionally, the .NET Framework had a vast ecosystem of libraries and frameworks built on top of it.
+   - **.NET Core:** Initially, .NET Core had a more limited set of libraries compared to the mature ecosystem of the .NET Framework. However, efforts were made to unify the frameworks under the umbrella of .NET 5 and later, which combines the best features of both.
+
+7. **Name and Future:**
+   - **.NET Core:** The name ".NET Core" was used until version 3.1. Starting with version 5, the framework was rebranded simply as ".NET." The unification of .NET Core and .NET Framework into a single platform aimed to simplify the development experience.
+
+In summary, .NET Core was a significant evolution from the traditional .NET Framework, providing improvements in terms of cross-platform support, modularity, and open-source collaboration. With the convergence of .NET Core and .NET Framework into a unified .NET platform, developers can leverage the strengths of both worlds in their application development.
+
+
 <h2> CLR </h2>
 The CLR (Common Language Runtime) is a crucial component of the Microsoft .NET framework. It is a runtime environment that provides various services for executing and managing applications written in different languages that target the .NET platform. The CLR is responsible for handling many tasks necessary for running .NET applications, including memory management, security, exception handling, and more.
 Here are some key features and responsibilities of the Common Language Runtime:
@@ -1606,6 +1641,57 @@ Key features and concepts of ASP.NET include:
 ASP.NET has evolved over the years, and ASP.NET Core represents the latest version as of my knowledge cutoff in January 2022. It's worth checking for any updates or changes beyond that date.
 
 
+
+
+<h3> HTTP and HTTPS </h3>
+
+HTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secure) are both protocols used for transmitting data over the internet. The main differences between them lie in their security features:
+
+1. **Security:**
+   - **HTTP (HyperText Transfer Protocol):** It operates over a plain text communication, which means that the data exchanged between the user and the website is not encrypted. This makes it susceptible to eavesdropping and man-in-the-middle attacks.
+   - **HTTPS (HyperText Transfer Protocol Secure):** It uses a secure, encrypted connection between the user's browser and the website. This encryption is typically achieved using TLS (Transport Layer Security) or its predecessor, SSL (Secure Sockets Layer). This encryption helps protect sensitive data, such as login credentials and payment information, from being intercepted by malicious actors.
+
+2. **Protocol and Port:**
+   - **HTTP:** Operates over port 80 by default.
+   - **HTTPS:** Operates over port 443 by default. The 'S' in HTTPS stands for 'Secure,' indicating that the communication is encrypted.
+
+3. **Authentication and Trust:**
+   - **HTTPS:** In addition to encryption, HTTPS provides authentication. When you visit a website using HTTPS, the server presents a digital certificate that is verified by a third party called a Certificate Authority (CA). This helps ensure that you are connecting to the legitimate website and not a malicious impostor.
+   - **HTTP:** Does not provide a mechanism for server authentication. As a result, there is a higher risk of connecting to an untrusted or malicious server.
+
+4. **SEO and Trust Indicators:**
+   - **Search Engines:** Search engines tend to favor HTTPS websites over HTTP ones in their ranking algorithms.
+   - **Browsers:** Modern web browsers often indicate the security status of a website to users. For example, a padlock icon in the address bar typically signifies a secure HTTPS connection, providing users with a visual cue that their connection is encrypted and secure.
+
+5. **Data Integrity:**
+   - **HTTPS:** Ensures data integrity by preventing tampering during the transmission of data between the user and the website.
+   - **HTTP:** Does not provide data integrity, and transmitted data can be altered by attackers without detection.
+
+In summary, HTTPS is an extension of HTTP that adds a layer of security through encryption and authentication. It is especially important for websites that handle sensitive information to ensure the confidentiality and integrity of data exchanged between users and the server.HTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secure) are both protocols used for transmitting data over the internet. The main differences between them lie in their security features:
+
+1. **Security:**
+   - **HTTP (HyperText Transfer Protocol):** It operates over a plain text communication, which means that the data exchanged between the user and the website is not encrypted. This makes it susceptible to eavesdropping and man-in-the-middle attacks.
+   - **HTTPS (HyperText Transfer Protocol Secure):** It uses a secure, encrypted connection between the user's browser and the website. This encryption is typically achieved using TLS (Transport Layer Security) or its predecessor, SSL (Secure Sockets Layer). This encryption helps protect sensitive data, such as login credentials and payment information, from being intercepted by malicious actors.
+
+2. **Protocol and Port:**
+   - **HTTP:** Operates over port 80 by default.
+   - **HTTPS:** Operates over port 443 by default. The 'S' in HTTPS stands for 'Secure,' indicating that the communication is encrypted.
+
+3. **Authentication and Trust:**
+   - **HTTPS:** In addition to encryption, HTTPS provides authentication. When you visit a website using HTTPS, the server presents a digital certificate that is verified by a third party called a Certificate Authority (CA). This helps ensure that you are connecting to the legitimate website and not a malicious impostor.
+   - **HTTP:** Does not provide a mechanism for server authentication. As a result, there is a higher risk of connecting to an untrusted or malicious server.
+
+4. **SEO and Trust Indicators:**
+   - **Search Engines:** Search engines tend to favor HTTPS websites over HTTP ones in their ranking algorithms.
+   - **Browsers:** Modern web browsers often indicate the security status of a website to users. For example, a padlock icon in the address bar typically signifies a secure HTTPS connection, providing users with a visual cue that their connection is encrypted and secure.
+
+5. **Data Integrity:**
+   - **HTTPS:** Ensures data integrity by preventing tampering during the transmission of data between the user and the website.
+   - **HTTP:** Does not provide data integrity, and transmitted data can be altered by attackers without detection.
+
+In summary, HTTPS is an extension of HTTP that adds a layer of security through encryption and authentication. It is especially important for websites that handle sensitive information to ensure the confidentiality and integrity of data exchanged between users and the server.
+
+
 # FRONT-END
 <h1> HTML </h1>
 
@@ -1763,3 +1849,4 @@ JavaScript is a high-level, versatile, and dynamically-typed programming languag
    - Security is a crucial consideration in JavaScript development. Developers need to be aware of potential security threats, such as Cross-Site Scripting (XSS), and implement best practices to secure their applications.
 
 In summary, JavaScript is a fundamental language in web development, enabling the creation of dynamic and interactive web applications. Its continual evolution through the ECMAScript standard and the support of a vibrant ecosystem of libraries and frameworks contribute to its widespread use in modern software development.
+
