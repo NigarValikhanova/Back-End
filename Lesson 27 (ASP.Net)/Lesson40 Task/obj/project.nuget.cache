@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gFkq2iCyqXUWSPiD/paXV/nhcv7LYIfw9IWC/c3/E9p1ncmMxbm2PF9zBms5SS2BXziKnNlOAvLCyIuCaHxG+Q==",
+  "dgSpecHash": "PkPLcAZcsL2f6Y4TEIK/Y7yZNZcrQxt5gKHXGf1fe2JLr3RhHcC+Ey9oDl0osqIFaMkQpJkJeVAV87ymAz4auw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\Lesson40 Task.csproj",
+  "projectFilePath": "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\Lesson40 Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

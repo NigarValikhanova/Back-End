@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\Lesson40 Task.csproj": {}
+    "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\Lesson40 Task.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\Lesson40 Task.csproj": {
+    "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\Lesson40 Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\Lesson40 Task.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\Lesson40 Task.csproj",
         "projectName": "Lesson40 Task",
-        "projectPath": "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\Lesson40 Task.csproj",
+        "projectPath": "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\Lesson40 Task.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\source\\repos\\Lesson40 Task\\Lesson40 Task\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\Learning Back End\\Back-End\\Lesson 27 (ASP.Net)\\Lesson40 Task\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
