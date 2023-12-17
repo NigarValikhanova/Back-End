@@ -1,4 +1,5 @@
-﻿using Lesson43_Task.Models;
+﻿using Lesson43_Task.DAL;
+using Lesson43_Task.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,12 +7,13 @@ namespace Lesson43_Task.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _appContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AppDbContext appContext)
         {
-            _logger = logger;
+            _appContext = appContext;
         }
+
 
         public IActionResult Index()
         {
