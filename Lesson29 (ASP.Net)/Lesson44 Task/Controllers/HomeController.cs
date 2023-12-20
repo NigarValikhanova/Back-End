@@ -51,7 +51,7 @@ namespace Lesson43_Task.Controllers
 
         public IActionResult Blog_List2()
         {
-            return View();
+            return View(_appContext.Blogs.ToList());
         }
 
         public IActionResult Blog_Single()
