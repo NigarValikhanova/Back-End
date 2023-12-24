@@ -1,0 +1,18 @@
+﻿@using Lesson43_Task.Models;
+@model Blog
+
+<form asp-controller="Blog" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label">Blog Title</label>
+        <input asp-for="Title" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Blog Text</label>
+        <input asp-for="Text" type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-success"> Submit </button>
+
+</form>

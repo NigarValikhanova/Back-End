@@ -1,0 +1,51 @@
+﻿@using Lesson43_Task.Models;
+
+ @model Blog
+
+ @Html.ValidationMessage("Error")
+
+<form asp-controller="Blog" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">BlogTitle</label>
+        <input asp-for="Title" type="text" class="form-control" >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">BlogText</label>
+        <input asp-for="Text" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">BlogImage</label>
+        <img id="img-preview" src="https://ami-sni.com/wp-content/themes/consultix/images/no-image-found-360x250.png" width="250px" />
+        <div>
+            <input asp-for="File" type="file" accept="image/*" onchange="readURL(this)" />
+        </div>
+
+    <button class="btn btn-success"> Submit </button>
+
+</form> 
+
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //Change this to your no-image file
+        let noimage =
+            "https://ami-sni.com/wp-content/themes/consultix/images/no-image-found-360x250.png";
+
+        function readURL(input) {
+            console.log(input.files);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#img-preview").attr("src", e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                $("#img-preview").attr("src", noimage);
+            }
+        }
+
+    </script>
+}
