@@ -1850,3 +1850,33 @@ JavaScript is a high-level, versatile, and dynamically-typed programming languag
 
 In summary, JavaScript is a fundamental language in web development, enabling the creation of dynamic and interactive web applications. Its continual evolution through the ECMAScript standard and the support of a vibrant ecosystem of libraries and frameworks contribute to its widespread use in modern software development.
 
+
+<h3> ASP.NET CORE MVC </h3>
+
+ASP.NET Core MVC is a web application framework developed by Microsoft that is part of the ASP.NET Core framework. It is a modern, lightweight, and cross-platform framework used for building dynamic, scalable, and high-performance web applications. MVC stands for Model-View-Controller, which is a design pattern that separates an application into three main components:
+
+1. **Model:** Represents the application's data and business logic. It is responsible for retrieving, processing, and storing data.
+
+2. **View:** Represents the user interface and presentation layer. It displays the data to the users and captures user input. Views are typically responsible for presenting information in a readable format.
+
+3. **Controller:** Manages user input and updates the model and view accordingly. Controllers handle user requests, invoke the necessary business logic in the model, and determine which view to render.
+
+Key features and concepts of ASP.NET Core MVC include:
+
+- **Cross-platform:** ASP.NET Core is designed to be cross-platform, making it possible to develop and run applications on Windows, macOS, and Linux.
+
+- **Dependency Injection:** ASP.NET Core has built-in support for dependency injection, which helps in creating more modular and testable code.
+
+- **Tag Helpers:** Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor views. They provide a more natural way to work with server-side code within HTML markup.
+
+- **Middleware:** ASP.NET Core applications use middleware to handle requests and responses. Middleware components are configured in the application's startup code and can be used for tasks such as authentication, authorization, and request processing.
+
+- **Razor Pages:** In addition to the MVC pattern, ASP.NET Core includes Razor Pages, which is a more page-focused programming model that simplifies the development of page-centric web applications.
+
+- **Attribute Routing:** Routing is a critical aspect of any web framework. ASP.NET Core MVC supports attribute routing, allowing developers to define routes using attributes within the controllers and actions.
+
+- **Model Binding:** Automatic model binding simplifies the process of mapping incoming HTTP request data to action method parameters, making it easier to work with user input.
+
+- **View Components:** View Components are similar to partial views but provide more functionality. They are designed to encapsulate a component's logic and rendering, promoting reusability.
+
+ASP.NET Core MVC is a versatile framework suitable for building a wide range of web applications, from small and simple projects to large and complex enterprise-level applications. It integrates well with other ASP.NET Core components, such as Razor Pages, Web API, and SignalR, providing developers with a comprehensive toolkit for building modern web applications.
