@@ -1850,3 +1850,190 @@ JavaScript is a high-level, versatile, and dynamically-typed programming languag
 
 In summary, JavaScript is a fundamental language in web development, enabling the creation of dynamic and interactive web applications. Its continual evolution through the ECMAScript standard and the support of a vibrant ecosystem of libraries and frameworks contribute to its widespread use in modern software development.
 
+
+<h3> ASP.NET CORE MVC </h3>
+
+ASP.NET Core MVC is a web application framework developed by Microsoft that is part of the ASP.NET Core framework. It is a modern, lightweight, and cross-platform framework used for building dynamic, scalable, and high-performance web applications. MVC stands for Model-View-Controller, which is a design pattern that separates an application into three main components:
+
+1. **Model:** Represents the application's data and business logic. It is responsible for retrieving, processing, and storing data.
+
+2. **View:** Represents the user interface and presentation layer. It displays the data to the users and captures user input. Views are typically responsible for presenting information in a readable format.
+
+3. **Controller:** Manages user input and updates the model and view accordingly. Controllers handle user requests, invoke the necessary business logic in the model, and determine which view to render.
+
+Key features and concepts of ASP.NET Core MVC include:
+
+- **Cross-platform:** ASP.NET Core is designed to be cross-platform, making it possible to develop and run applications on Windows, macOS, and Linux.
+
+- **Dependency Injection:** ASP.NET Core has built-in support for dependency injection, which helps in creating more modular and testable code.
+
+- **Tag Helpers:** Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor views. They provide a more natural way to work with server-side code within HTML markup.
+
+- **Middleware:** ASP.NET Core applications use middleware to handle requests and responses. Middleware components are configured in the application's startup code and can be used for tasks such as authentication, authorization, and request processing.
+
+- **Razor Pages:** In addition to the MVC pattern, ASP.NET Core includes Razor Pages, which is a more page-focused programming model that simplifies the development of page-centric web applications.
+
+- **Attribute Routing:** Routing is a critical aspect of any web framework. ASP.NET Core MVC supports attribute routing, allowing developers to define routes using attributes within the controllers and actions.
+
+- **Model Binding:** Automatic model binding simplifies the process of mapping incoming HTTP request data to action method parameters, making it easier to work with user input.
+
+- **View Components:** View Components are similar to partial views but provide more functionality. They are designed to encapsulate a component's logic and rendering, promoting reusability.
+
+ASP.NET Core MVC is a versatile framework suitable for building a wide range of web applications, from small and simple projects to large and complex enterprise-level applications. It integrates well with other ASP.NET Core components, such as Razor Pages, Web API, and SignalR, providing developers with a comprehensive toolkit for building modern web applications.
+
+
+<h4> DAL </h4>
+
+The term "DAL" typically stands for "Data Access Layer." The DAL is a conceptual or organizational folder or module within a software application that is responsible for interacting with the database or any other data storage mechanism. Its primary purpose is to abstract and encapsulate the data access logic from the rest of the application, promoting a separation of concerns and maintaining a clean and modular architecture. Here's some information about the DAL folder:
+
+1. **Responsibility:**
+   - **Database Interactions:** The DAL is responsible for handling all interactions with the underlying database or data storage system. This includes tasks such as querying for data, updating records, and managing transactions.
+
+   - **Data Mapping:** It often involves translating data between the application's data model and the database schema. This mapping ensures that the data in the application is compatible with the structure of the underlying data storage.
+
+2. **Components in the DAL:**
+   - **Data Access Objects (DAOs) or Repositories:** These are classes or components responsible for abstracting the details of data storage operations. They provide a clean and consistent interface for the rest of the application to interact with the database.
+
+   - **Entities or Models:** These represent the data structures used by the application. They might mirror the database schema or be designed to meet the specific needs of the application.
+
+   - **Connection Management:** The DAL typically includes components for managing database connections, handling connection pooling, and ensuring efficient use of database resources.
+
+3. **Advantages:**
+   - **Modularity:** Separating data access logic into a distinct layer enhances the modularity of the application. Changes to the database or data access technology can be isolated within the DAL, reducing the impact on the rest of the application.
+
+   - **Testability:** The DAL can be unit tested independently of the rest of the application, allowing developers to verify the correctness of database interactions without running the entire application.
+
+   - **Security:** Centralizing data access logic allows for the implementation of security measures, such as parameterized queries and input validation, to prevent SQL injection and other security vulnerabilities.
+
+4. **Implementation Technologies:**
+   - **ORM (Object-Relational Mapping):** Some DALs use ORM frameworks like Entity Framework (for .NET) or Hibernate (for Java) to simplify the mapping between database tables and application objects.
+
+   - **Stored Procedures or SQL Queries:** In some cases, developers might use stored procedures or handcrafted SQL queries to interact with the database directly.
+
+5. **Location in the Project Structure:**
+   - The DAL folder is typically found within the project's structure, organized alongside other folders like "Controllers," "Models," and "Views" in the case of an MVC (Model-View-Controller) architecture.
+
+   - It might contain subfolders for different types of data access components or entities.
+
+In summary, the DAL folder plays a crucial role in managing the data access logic of an application, providing a structured and maintainable way to interact with the underlying data storage. Its organization and components may vary based on the specific architecture and technologies used in a given project.
+
+
+<h3> DbContext </h3>
+
+In Entity Framework (EF), `DbContext` is a crucial class that represents the session with the database and allows you to query and save instances of your entities. It is a part of the Entity Framework Core, which is the lightweight, extensible, and cross-platform version of Entity Framework.
+
+Here's a basic overview of how `DbContext` is used:
+
+1. **Create a DbContext Class:**
+   You need to create a class that derives from `DbContext`. This class represents a session with the database and provides a set of methods for interacting with it.
+
+   ```csharp
+   using Microsoft.EntityFrameworkCore;
+
+   public class YourDbContext : DbContext
+   {
+       public YourDbContext(DbContextOptions<YourDbContext> options) : base(options)
+       {
+       }
+
+       // DbSet properties for your entities
+       public DbSet<User> Users { get; set; }
+       public DbSet<Product> Products { get; set; }
+
+       // Other configurations and overrides as needed
+   }
+   ```
+
+2. **Configure DbContext in Startup:**
+   In your `Startup.cs` file, you need to configure your `DbContext` by specifying the database provider, connection string, and any other relevant options.
+
+   ```csharp
+   services.AddDbContext<YourDbContext>(options =>
+       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+   ```
+
+   In this example, it assumes the use of SQL Server, but you can replace it with the appropriate database provider.
+
+3. **Use DbContext in Services or Controllers:**
+   You can then inject your `DbContext` into your services or controllers to interact with the database.
+
+   ```csharp
+   public class YourService
+   {
+       private readonly YourDbContext _dbContext;
+
+       public YourService(YourDbContext dbContext)
+       {
+           _dbContext = dbContext;
+       }
+
+       public void SomeMethod()
+       {
+           // Use _dbContext to query or modify data
+       }
+   }
+   ```
+
+   The `DbSet` properties in your `DbContext` class (e.g., `Users` and `Products` in the example above) represent collections of entities, and you can use LINQ queries or other methods provided by Entity Framework to interact with the data.
+
+
+<h4> Identity </h4>
+
+In .NET Core, identity management is a framework that provides a set of APIs for handling user authentication, authorization, and other related functionalities. It helps developers implement user authentication and authorization in their applications without having to build these features from scratch.
+
+The main components of Identity in .NET Core include:
+
+1. **User Authentication:** Identity allows you to authenticate users using various authentication methods, such as username/password, external providers (like Google, Facebook, etc.), or custom authentication schemes.
+
+2. **User Authorization:** Once a user is authenticated, Identity helps in managing and enforcing authorization policies. It allows you to define roles and claims, and it integrates with the ASP.NET Core authorization system to control access to resources within your application.
+
+3. **User Management:** Identity provides APIs for managing user accounts, including features like creating, updating, deleting users, and managing their roles and claims.
+
+4. **Token-based Authentication:** Identity supports token-based authentication, allowing you to generate and validate tokens for secure communication between the client and server.
+
+5. **Cookie Authentication:** Identity includes cookie authentication, which is commonly used for web applications. It stores user authentication information in a secure cookie.
+
+To use Identity in a .NET Core application, you typically need to follow these steps:
+
+1. **Install the Identity NuGet Package:**
+   Add the necessary Identity packages to your project using NuGet Package Manager or the .NET CLI.
+
+   ```bash
+   dotnet add package Microsoft.AspNetCore.Identity
+   ```
+
+2. **Configure Identity in Startup:**
+   In the `Startup.cs` file, configure Identity services using the `AddIdentity` method, specifying the user and role types.
+
+   ```csharp
+   services.AddIdentity<ApplicationUser, IdentityRole>()
+       .AddEntityFrameworkStores<ApplicationDbContext>()
+       .AddDefaultTokenProviders();
+   ```
+
+3. **Configure Authentication and Authorization:**
+   Configure authentication and authorization in the `ConfigureServices` and `Configure` methods, specifying policies and requirements.
+
+   ```csharp
+   services.AddAuthentication(options =>
+   {
+       options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+       options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+       options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+   })
+   .AddCookie();
+
+   services.AddAuthorization();
+   ```
+
+4. **Use Identity in Controllers and Views:**
+   You can now use the `[Authorize]` attribute in your controllers or views to secure access to specific resources.
+
+   ```csharp
+   [Authorize(Roles = "Admin")]
+   public class AdminController : Controller
+   {
+       // Actions for admin-only access
+   }
+   ```
+
