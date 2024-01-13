@@ -2037,3 +2037,314 @@ To use Identity in a .NET Core application, you typically need to follow these s
    }
    ```
 
+<h3> Mail Sender in ASP.NET core 7</h3>
+
+As of my last knowledge update in January 2022, ASP.NET Core 7 has not been released, and my information is based on the state of ASP.NET Core up to version 6. Please check the latest official documentation or release notes for ASP.NET Core 7 for any changes or updates.
+
+In the context of sending emails in an ASP.NET Core MVC application, you can use the `SmtpClient` class or third-party libraries to facilitate email sending. Below is a general example of how you might create a simple mail sender service in an ASP.NET Core MVC application.
+
+```csharp
+using System.Net;
+using System.Net.Mail;
+using Microsoft.Extensions.Configuration;
+
+public class EmailService
+{
+    private readonly IConfiguration _configuration;
+
+    public EmailService(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+
+    public void SendEmail(string to, string subject, string body)
+    {
+        var smtpClient = new SmtpClient
+        {
+            Host = _configuration["EmailSettings:SmtpServer"],
+            Port = int.Parse(_configuration["EmailSettings:SmtpPort"]),
+            Credentials = new NetworkCredential(
+                _configuration["EmailSettings:SmtpUsername"],
+                _configuration["EmailSettings:SmtpPassword"]
+            ),
+            EnableSsl = true,
+        };
+
+        var mailMessage = new MailMessage
+        {
+            From = new MailAddress(_configuration["EmailSettings:FromAddress"]),
+            Subject = subject,
+            Body = body,
+            IsBodyHtml = true,
+        };
+
+        mailMessage.To.Add(to);
+
+        smtpClient.Send(mailMessage);
+    }
+}
+```
+
+In this example:
+
+- The `EmailService` class takes an `IConfiguration` instance to read email settings from the configuration.
+- The `SendEmail` method uses the `SmtpClient` class to send an email.
+- The email settings (SMTP server, port, username, password, etc.) are typically stored in the application's configuration.
+
+Ensure you configure your email settings in the `appsettings.json` or another configuration source:
+
+```json
+{
+  "EmailSettings": {
+    "SmtpServer": "your-smtp-server",
+    "SmtpPort": "your-smtp-port",
+    "SmtpUsername": "your-smtp-username",
+    "SmtpPassword": "your-smtp-password",
+    "FromAddress": "your-email@example.com"
+  }
+}
+```
+
+Remember to handle exceptions, implement error logging, and consider secure practices, such as storing sensitive information (like passwords) securely.
+
+For the most up-to-date information regarding ASP.NET Core 7 and any new features or changes, please refer to the official documentation or announcements from Microsoft.
+
+<h3> SOLID Principles </h3>
+
+The SOLID principles are a set of five design principles that, when followed, can lead to more maintainable, flexible, and scalable software. These principles were introduced by Robert C. Martin and are widely used in object-oriented programming. The SOLID acronym stands for:
+
+1. **Single Responsibility Principle (SRP):**
+   - A class should have only one reason to change, meaning it should have only one responsibility or job. This principle encourages breaking down complex systems into smaller, more manageable components.
+
+   **Example:**
+   ```csharp
+   // Without SRP
+   public class Report {
+       public void GenerateReport() {
+           // Generating report logic
+           // ...
+       }
+
+       public void SaveToFile() {
+           // Saving to file logic
+           // ...
+       }
+   }
+
+   // With SRP
+   public class ReportGenerator {
+       public void GenerateReport() {
+           // Generating report logic
+           // ...
+       }
+   }
+
+   public class ReportSaver {
+       public void SaveToFile() {
+           // Saving to file logic
+           // ...
+       }
+   }
+   ```
+
+2. **Open/Closed Principle (OCP):**
+   - Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This encourages the use of interfaces, abstract classes, and inheritance to allow for future changes without modifying existing code.
+
+   **Example:**
+   ```csharp
+   // Without OCP
+   public class Circle {
+       public double Radius { get; set; }
+   }
+
+   public class AreaCalculator {
+       public double CalculateArea(Circle circle) {
+           return Math.PI * Math.Pow(circle.Radius, 2);
+       }
+   }
+
+   // With OCP
+   public interface IShape {
+       double CalculateArea();
+   }
+
+   public class Circle : IShape {
+       public double Radius { get; set; }
+
+       public double CalculateArea() {
+           return Math.PI * Math.Pow(Radius, 2);
+       }
+   }
+
+   public class Rectangle : IShape {
+       public double Width { get; set; }
+       public double Height { get; set; }
+
+       public double CalculateArea() {
+           return Width * Height;
+       }
+   }
+   ```
+
+3. **Liskov Substitution Principle (LSP):**
+   - Subtypes must be substitutable for their base types without altering the correctness of the program. This principle ensures that derived classes can be used interchangeably with their base classes without causing errors.
+
+   **Example:**
+   ```csharp
+   // Without LSP
+   public class Bird {
+       public virtual void Fly() {
+           // Flying logic
+           // ...
+       }
+   }
+
+   public class Penguin : Bird {
+       public override void Fly() {
+           // Penguin can't fly
+           throw new InvalidOperationException("Penguins can't fly.");
+       }
+   }
+
+   // With LSP
+   public interface IFlyable {
+       void Fly();
+   }
+
+   public class Bird : IFlyable {
+       public virtual void Fly() {
+           // Flying logic
+           // ...
+       }
+   }
+
+   public class Penguin : IFlyable {
+       public void Fly() {
+           // Penguin can't fly
+           throw new InvalidOperationException("Penguins can't fly.");
+       }
+   }
+   ```
+
+4. **Interface Segregation Principle (ISP):**
+   - A class should not be forced to implement interfaces it does not use. This principle suggests breaking large interfaces into smaller, more specific ones, preventing classes from implementing unnecessary methods.
+
+   **Example:**
+   ```csharp
+   // Without ISP
+   public interface IWorker {
+       void Work();
+       void Eat();
+   }
+
+   public class Robot : IWorker {
+       public void Work() {
+           // Robot working logic
+           // ...
+       }
+
+       public void Eat() {
+           // Robot doesn't eat
+           throw new InvalidOperationException("Robots don't eat.");
+       }
+   }
+
+   // With ISP
+   public interface IWorker {
+       void Work();
+   }
+
+   public interface IEater {
+       void Eat();
+   }
+
+   public class Robot : IWorker {
+       public void Work() {
+           // Robot working logic
+           // ...
+       }
+   }
+
+   public class Human : IWorker, IEater {
+       public void Work() {
+           // Human working logic
+           // ...
+       }
+
+       public void Eat() {
+           // Human eating logic
+           // ...
+       }
+   }
+   ```
+
+5. **Dependency Inversion Principle (DIP):**
+   - High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions. This principle promotes the use of dependency injection and inversion of control to decouple high-level and low-level components.
+
+   **Example:**
+   ```csharp
+   // Without DIP
+   public class LightBulb {
+       public void TurnOn() {
+           // Turn on logic
+           // ...
+       }
+
+       public void TurnOff() {
+           // Turn off logic
+           // ...
+       }
+   }
+
+   public class Switch {
+       private readonly LightBulb _lightBulb;
+
+       public Switch(LightBulb lightBulb) {
+           _lightBulb = lightBulb;
+       }
+
+       public void Press() {
+           if (/* some condition */) {
+               _lightBulb.TurnOn();
+           } else {
+               _lightBulb.TurnOff();
+           }
+       }
+   }
+
+   // With DIP
+   public interface IDevice {
+       void TurnOn();
+       void TurnOff();
+   }
+
+   public class LightBulb : IDevice {
+       public void TurnOn() {
+           // Turn on logic
+           // ...
+       }
+
+       public void TurnOff() {
+           // Turn off logic
+           // ...
+       }
+   }
+
+   public class Switch {
+       private readonly IDevice _device;
+
+       public Switch(IDevice device) {
+           _device = device;
+       }
+
+       public void Press() {
+           if (/* some condition */) {
+               _device.TurnOn();
+           } else {
+               _device.TurnOff();
+           }
+       }
+   }
+   ```
+
+Applying SOLID principles results in code that is modular, maintainable, and adheres to good design practices. Keep in mind that these principles should be applied judiciously, and their application may vary based on the context and specific requirements of your software development project.
