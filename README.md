@@ -408,6 +408,8 @@ default: This is also an optional case that is executed when none of the previou
 
 Here's an example of a switch statement in action:
 
+
+
 ![4 04](https://github.com/NigarValikhanova/IT-Brains-Academy/assets/140783772/74de6471-2c93-4bba-970f-df56a78200b5)
 
 In this example, the switch statement evaluates the value of the day variable and assigns the corresponding day name to the dayName variable. The break statements ensure that only the code for the matching case is executed.
@@ -547,6 +549,7 @@ Use Cases:
 
 Boxing and unboxing are often encountered when working with non-generic collections like ArrayList or when interfacing with APIs that expect reference types.
 They are commonly used in scenarios where you need to store value types in data structures designed for reference types, such as lists or dictionaries.
+
 
 ![6 03](https://github.com/NigarValikhanova/IT-Brains-Academy/assets/140783772/81cd6fff-2afd-46ba-ba76-cc770b3506eb)
 
