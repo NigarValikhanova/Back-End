@@ -76,9 +76,6 @@ Overall, IL is a fundamental component of the .NET framework, enabling cross-pla
 
 ![clr il jit](https://github.com/NigarValikhanova/Just-For-Me/assets/140783772/46f2d3c1-daec-41f8-b7fa-a17b455a2030)
 
-
-
-
 <h3> DLL </h3>
 A DLL (Dynamic Link Library) is a file format used in Windows operating systems to store and organize code, data, and resources that can be shared among multiple programs. DLLs contain compiled code that can be loaded and executed by applications, providing a way to modularize and reuse code while reducing redundancy and improving maintenance.
 Key features of DLLs include:
