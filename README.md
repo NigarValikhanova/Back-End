@@ -2675,3 +2675,5 @@ Here are some key points about APIs:
 7. **REST vs. GraphQL**: REST (Representational State Transfer) and GraphQL are two popular architectural styles for designing APIs. RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources, while GraphQL provides a more flexible and efficient approach to querying and manipulating data.
 
 Overall, APIs are fundamental building blocks of modern software development, enabling interoperability between different systems and empowering developers to create innovative applications by leveraging existing services and resources.
+
+<h2>Web App MVC</h2>
