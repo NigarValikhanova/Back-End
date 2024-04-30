@@ -1,4 +1,4 @@
-# Back-End
+# Back-End C#
 
 <h2> Framework </h2>
 In general terms, a framework is a conceptual structure or a set of rules and guidelines that provides a foundation for building something specific. It acts as a support system or scaffolding to help organize, develop, and streamline various aspects of a project or system. Frameworks can be found in various fields and disciplines, such as software development, architecture, education, and more.
@@ -75,9 +75,6 @@ The use of IL and the CLR provides several advantages:
 Overall, IL is a fundamental component of the .NET framework, enabling cross-platform support and promoting language interoperability while providing a secure and efficient runtime environment for .NET applications.
 
 ![clr il jit](https://github.com/NigarValikhanova/Just-For-Me/assets/140783772/46f2d3c1-daec-41f8-b7fa-a17b455a2030)
-
-
-
 
 <h3> DLL </h3>
 A DLL (Dynamic Link Library) is a file format used in Windows operating systems to store and organize code, data, and resources that can be shared among multiple programs. DLLs contain compiled code that can be loaded and executed by applications, providing a way to modularize and reuse code while reducing redundancy and improving maintenance.
@@ -408,6 +405,8 @@ default: This is also an optional case that is executed when none of the previou
 
 Here's an example of a switch statement in action:
 
+
+
 ![4 04](https://github.com/NigarValikhanova/IT-Brains-Academy/assets/140783772/74de6471-2c93-4bba-970f-df56a78200b5)
 
 In this example, the switch statement evaluates the value of the day variable and assigns the corresponding day name to the dayName variable. The break statements ensure that only the code for the matching case is executed.
@@ -547,6 +546,7 @@ Use Cases:
 
 Boxing and unboxing are often encountered when working with non-generic collections like ArrayList or when interfacing with APIs that expect reference types.
 They are commonly used in scenarios where you need to store value types in data structures designed for reference types, such as lists or dictionaries.
+
 
 ![6 03](https://github.com/NigarValikhanova/IT-Brains-Academy/assets/140783772/81cd6fff-2afd-46ba-ba76-cc770b3506eb)
 
@@ -2489,3 +2489,189 @@ A Web API, or Web Application Programming Interface, is an interface that allows
 
 4. **Spring Boot:**
    - A Java-based framework for building stand-alone, production-grade Spring-based applications, including Web APIs.
+
+<h4> Creating Shopping Cart </h4>
+
+To create a shopping cart feature for your application, you typically need to implement the following steps:
+
+1. **Database Setup**: You'll need a database table to store the items added to the shopping cart. This table could include fields such as the product ID, quantity, user ID (if the cart is tied to a specific user), and any other relevant information.
+
+2. **Model**: Create a model class in your application to represent the items in the shopping cart. This model class should correspond to the structure of your database table.
+
+3. **Repository**: Implement repository methods to perform CRUD (Create, Read, Update, Delete) operations on the shopping cart items. These methods will interact with the database to add, remove, update, or retrieve items from the shopping cart.
+
+4. **Service Layer (Optional)**: You can create a service layer to encapsulate the business logic related to the shopping cart. This layer can handle operations like calculating the total price, applying discounts, or validating item quantities.
+
+5. **Controller**: Create controller actions to handle shopping cart operations such as adding items to the cart, updating quantities, removing items, and viewing the cart. These actions will interact with the service layer or repository to perform the necessary operations.
+
+6. **Views**: Develop views to display the shopping cart, allow users to add or remove items, update quantities, and proceed to checkout. These views will interact with the controller actions to perform the desired operations.
+
+7. **Session Management**: Use session management to store the shopping cart data temporarily while the user navigates the site. You can use session variables to store the cart items, quantities, and other relevant information.
+
+8. **Integration with Product Catalog**: Integrate the shopping cart with your product catalog to allow users to add items to the cart directly from product pages.
+
+By following these steps, you can create a functional shopping cart feature for your application, allowing users to add products, manage quantities, and proceed to checkout seamlessly. 
+
+
+In ASP.NET Core MVC, implementing a shopping cart follows a similar approach to what I outlined earlier. Here's a more detailed guide tailored specifically for ASP.NET Core MVC:
+
+1. **Database Setup**: Define a database table to store the shopping cart items. You can use Entity Framework Core to define your model classes and generate the corresponding database tables.
+
+2. **Model**: Create a model class to represent the items in the shopping cart. This class should include properties such as the product ID, quantity, and any other relevant information.
+
+    ```csharp
+    public class ShoppingCartItem
+    {
+        public int Id { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        // Add other properties as needed
+    }
+    ```
+
+3. **Repository**: Implement repository methods to interact with the database and perform CRUD operations on the shopping cart items.
+
+    ```csharp
+    public interface IShoppingCartRepository
+    {
+        void AddToCart(ShoppingCartItem item);
+        void RemoveFromCart(int itemId);
+        IEnumerable<ShoppingCartItem> GetCartItems();
+        // Add other methods as needed
+    }
+    ```
+
+4. **Service Layer (Optional)**: Create a service class to encapsulate the business logic related to the shopping cart. This class can handle operations such as calculating the total price, applying discounts, or validating item quantities.
+
+5. **Controller**: Develop controller actions to handle shopping cart operations. These actions will interact with the service layer or repository to perform the necessary operations.
+
+    ```csharp
+    public class ShoppingCartController : Controller
+    {
+        private readonly IShoppingCartRepository _shoppingCartRepository;
+
+        public ShoppingCartController(IShoppingCartRepository shoppingCartRepository)
+        {
+            _shoppingCartRepository = shoppingCartRepository;
+        }
+
+        public IActionResult Index()
+        {
+            var cartItems = _shoppingCartRepository.GetCartItems();
+            return View(cartItems);
+        }
+
+        public IActionResult AddToCart(int productId)
+        {
+            // Add logic to add the specified product to the shopping cart
+            // Redirect to the shopping cart page or product page
+        }
+
+        public IActionResult RemoveFromCart(int itemId)
+        {
+            // Add logic to remove the specified item from the shopping cart
+            // Redirect to the shopping cart page
+        }
+
+        // Other actions for updating quantities, clearing the cart, etc.
+    }
+    ```
+
+6. **Views**: Create views to display the shopping cart, allow users to add or remove items, update quantities, and proceed to checkout. These views will interact with the controller actions to perform the desired operations.
+
+    - `Index.cshtml`: Display the list of cart items and provide options for managing the cart.
+    - `AddToCart.cshtml`, `RemoveFromCart.cshtml`: Views for adding and removing items from the cart.
+
+7. **Session Management**: Use session variables to store the shopping cart data temporarily while the user navigates the site. ASP.NET Core provides built-in support for session management.
+
+    ```csharp
+    // Startup.cs
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSession();
+        // Other configurations
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseSession();
+        // Other middleware configurations
+    }
+    ```
+
+8. **Integration with Product Catalog**: Integrate the shopping cart with your product catalog to allow users to add items to the cart directly from product pages.
+
+<h3> Creating Wishlist </h3>
+
+To create a wishlist feature in an ASP.NET Core MVC 7 application, you would typically follow these steps:
+
+1. **Set Up Your ASP.NET Core MVC Project**: If you haven't already, create a new ASP.NET Core MVC project in Visual Studio or using the .NET CLI.
+
+2. **Create a Model for Wishlist Items**: Define a model class to represent wishlist items. This could include properties such as ID, Name, Description, Price, etc., depending on your requirements.
+
+   ```csharp
+   public class WishlistItem
+   {
+       public int Id { get; set; }
+       public string Name { get; set; }
+       public string Description { get; set; }
+       public decimal Price { get; set; }
+       // Other properties as needed
+   }
+   ```
+
+3. **Set Up a Database Context**: Create a database context class that inherits from `DbContext` to handle interactions with your database.
+
+   ```csharp
+   public class ApplicationDbContext : DbContext
+   {
+       public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+       {
+       }
+
+       public DbSet<WishlistItem> WishlistItems { get; set; }
+   }
+   ```
+
+4. **Configure Connection to Database**: Configure your connection string in `appsettings.json` or using environment variables.
+
+5. **Create Controller and Views**: Generate a controller with views using Entity Framework scaffolding to handle CRUD operations for wishlist items.
+
+6. **Implement Wishlist Functionality**: Add actions to your controller for adding, removing, updating, and viewing wishlist items. These actions will interact with your database through the DbContext.
+
+7. **Display Wishlist**: Create views to display the wishlist items. This could be a simple table or a more sophisticated layout depending on your design preferences.
+
+8. **User Authentication and Authorization (Optional)**: If you want to track wishlists for individual users, you'll need to implement user authentication and authorization. ASP.NET Core Identity is a common solution for this.
+
+9. **Handle Adding to Wishlist**: Implement functionality for users to add items to their wishlist. This could be done through a button on product pages or a dedicated page for browsing and adding items to the wishlist.
+
+10. **Handle Removing from Wishlist**: Allow users to remove items from their wishlist, either through a button on the wishlist page or another interface.
+
+11. **Testing and Deployment**: Test your wishlist feature thoroughly to ensure it works as expected. Once tested, deploy your application to your desired hosting environment.
+
+    <h3>API</h3>
+    An API (Application Programming Interface) is a set of rules, protocols, and tools that allows different software applications to communicate with each other. It defines the methods and data formats that applications can use to request and exchange information.
+
+APIs play a crucial role in modern software development, enabling developers to integrate third-party services, access resources, and build upon existing functionalities without needing to understand the underlying code or infrastructure. APIs abstract away the complexity of underlying systems and provide a simplified interface for developers to interact with.
+
+Here are some key points about APIs:
+
+1. **Types of APIs**: There are several types of APIs, including:
+   - **Web APIs**: These are APIs accessed over the internet using HTTP(S) protocols. They are commonly used for web services and are often based on standards like REST (Representational State Transfer) or GraphQL.
+   - **Library APIs**: These are APIs provided by libraries or frameworks to enable developers to interact with their functionalities. For example, programming languages like Python provide standard library APIs.
+   - **Operating System APIs**: These are APIs provided by operating systems to enable interaction with system resources and functionalities. Examples include the Windows API or POSIX API.
+   - **Hardware APIs**: These are APIs provided by hardware devices to enable interaction with hardware components. For example, APIs provided by graphics cards or printers.
+
+2. **API Documentation**: Good API documentation is essential for developers to understand how to use an API effectively. Documentation typically includes information about endpoints (for web APIs), parameters, request and response formats, authentication methods, error handling, and usage examples.
+
+3. **Authentication and Authorization**: APIs often require authentication to ensure that only authorized users or applications can access them. Common authentication methods include API keys, OAuth tokens, and JWT (JSON Web Tokens).
+
+4. **Versioning**: APIs may evolve over time, introducing changes or deprecating certain features. Versioning is essential to ensure backward compatibility and provide a clear upgrade path for users of the API.
+
+5. **Rate Limiting**: To prevent abuse or overload of API servers, rate limiting is often applied. Rate limiting restricts the number of requests a client can make within a given time period.
+
+6. **API Design Principles**: Good API design follows principles such as simplicity, consistency, flexibility, and scalability. APIs should be intuitive to use, well-documented, and resilient to changes.
+
+7. **REST vs. GraphQL**: REST (Representational State Transfer) and GraphQL are two popular architectural styles for designing APIs. RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources, while GraphQL provides a more flexible and efficient approach to querying and manipulating data.
+
+Overall, APIs are fundamental building blocks of modern software development, enabling interoperability between different systems and empowering developers to create innovative applications by leveraging existing services and resources.

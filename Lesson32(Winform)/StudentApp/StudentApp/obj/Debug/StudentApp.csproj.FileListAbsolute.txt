@@ -1,0 +1,11 @@
+C:\Users\asus\source\repos\StudentApp\StudentApp\bin\Debug\StudentApp.exe.config
+C:\Users\asus\source\repos\StudentApp\StudentApp\bin\Debug\StudentApp.exe
+C:\Users\asus\source\repos\StudentApp\StudentApp\bin\Debug\StudentApp.pdb
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.AssemblyReference.cache
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.Properties.Resources.resources
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.GenerateResource.cache
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.exe
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.pdb
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.FormStudentInfo.resources
+C:\Users\asus\source\repos\StudentApp\StudentApp\obj\Debug\StudentApp.FormStudent.resources
